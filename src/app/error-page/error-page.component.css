@@ -1,0 +1,53 @@
+#container{
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  padding-top:10%;
+}
+#erroPageNumber{
+  font-size: 7em;
+  text-align: center;
+}
+#errorPageFirstHeader{
+  font-size: 3em;
+  text-align: center;
+}
+#errorPageSecondHeader{
+  width:70%;
+  margin-left:15%;
+  text-align: center;
+  padding-bottom: 2%;
+  margin-bottom: 0%;
+}
+/*MEDIA QUERIS STYLES START HERE*/
+@media only  screen and (min-width:308px) and (max-width: 440px){
+#container{
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  margin:0;
+  padding-top:30%;
+  background-color: white;
+}
+#erroPageNumber{
+  margin-top:20%;
+  font-size: 5em;
+  text-align: center;
+}
+#errorPageFirstHeader{
+  width:90%;
+  margin-left:5%;
+  font-size: 2em;
+  text-align: center;
+}
+#errorPageSecondHeader{
+  width:90%;
+  margin-left:5%;
+  text-align: center;
+  padding-bottom: 6%;
+  font-size:1.3em;
+  margin-bottom: 0%;
+}
+}

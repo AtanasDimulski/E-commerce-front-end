@@ -1,0 +1,167 @@
+<div id="container">
+  <div id="privacyPolicyContainer">
+    <h2 id="mainTitle">Отказ на договор без посочване на причина</h2>
+    <h2 class="subbTitle">Връщане на стока </h2>
+    <h2 class="descText">
+      Не сте направили правилен избор? В нашия магазин можете спокойно да избирате
+      парфюми и козметика, без риск. При нас е възможно да направите отказ от договор за
+      покупко-продажба без посочване на причина до 30 дни
+    </h2>
+    <h2 class="subbTitle">Как да постъпя при отказ от договор за покупко-продажба без посочване на
+      причина? </h2>
+    <h2 class="descText">
+      В срок до 30 дни след получаване на стоката ни уведомете за решението си за отказ от
+      договора за покупко-продажба. Ако във връзка със сключването на договора сте получили
+      от нас допълнителна стока („подарък“), трябва да се върне и този подарък. Най-добре е да
+      се свържете с нас по електронната поща <a class="styledLinks" href = "mailto: 777grimo@gmail.com">777grimo@gmail.com</a> или на тел <a class="styledLinks" href="tel:088-270-9580"> +359 876525362.</a>
+      Можете да ползвате и примерния формуляр за Отказ от договор, който ще намерите <a class="styledLinks" target=”_blank href="https://cdn.notinoimg.com/files/12/otkaz-na-poruchka_bg.pdf">тук.</a>
+    </h2>
+
+    <h2 class="descText">
+      Незабавно или не по късно от 14 дни от деня на отказа, изпратете стоката на адрес:
+    </h2>
+
+    <h2 class="descText">
+      Банкя, ул. Стефан Стамболов 76
+    </h2>
+
+    <h2 class="descText">
+      Ще Ви възстановим покупната цена в рамките на 14 дни от датата на отказа. В
+      съответствие със закона можем да изчакаме с възстановяването на сумата, докато не
+      получим върнатата от Вас стока. В случай, че направите отказ от договор през първите 14
+      дни от получаването на стоката, имате право на възстановяване на разходите за доставка
+      на стоката на стойност, отговаряща на най-евтиния начин за доставка на стоки.
+    </h2>
+
+    <h2 class="subbTitle">Кога мога да направя отказ от договор за покупко-продажба без посочване
+      на причина?
+      </h2>
+
+    <h2 class="descText">
+      Можете да ни върнете всяка стока, която сте закупили при нас. Изключение е стока, която:
+    </h2>
+
+    <h2 class="descText">
+      <span class="descTextWithSpansLeftSpan">1. </span>Е била приспособена или произведена според Вашите изисквания (например опаковка
+      или гравиране).
+    </h2>
+
+    <h2 class="descText">
+      <span class="descTextWithSpansLeftSpan">2. </span>
+      Поради хигиенични причини нейното връщане е невъзможно (например отворени
+      козметични и други продукти, които влизат в пряк контакт с кожата)
+      В случай че изберете стоката ви да бъде опакована като подарък или екологично,
+      договорът за услугата подаръчна или екологична опаковка не може да бъде прекратен,
+      когато стоката вече е опакована и следователно услугата е предоставена. Бихме искали да
+      Ви предупредим, че опаковаме стоката незабавно след извършване на поръчката.
+    </h2>
+    <h2 class="descText">
+      Също така не е възможен отказ от договор за покупко-продажба при подаръчна опаковка
+      на стока, когато вече сме я опаковали за Вас
+    </h2>
+
+    <h2 class="descText">
+      Позволяваме си да Ви обърнем внимание, че съгласно закона Вие отговаряте за
+      понижаването на стойността на стоката поради ползване на тази стока по друг начин,
+      различен от познатите съгласно естеството, характеристиките и функционалността на
+      стоката (например когато ползвате парфюм и след това, щом веднъж сте го пробвали). В
+      такъв случай, можем да Ви върнем само пропорционална част от цената на продукта.
+    </h2>
+
+    <h2 class="subbTitle">Контакти</h2>
+
+    <h2 class="descText">
+      В случай, че имате въпроси относно рекламациите, свържете се с нас на имейл
+      <a class="styledLinks" href = "mailto: 777grimo@gmail.com">777grimo@gmail.com</a> или тел<a class="styledLinks" href="tel:088-270-9580"> +359 876525362.</a>
+    </h2>
+
+    <h2 id="formTitle">Имате ли въпроси? Пишете ни.</h2>
+
+    <div id="formnmap">
+      <div class="formDiv">
+        <form [formGroup]="contactForm" #f='ngForm' novalidate>
+          <div class="form-group">
+            <label for="name">Вашето Име</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+             class="form-control"
+             id="contactFormName"
+              formControlName="contactFormName"
+               [(ngModel)]="itemName"
+                required>
+
+                <div *ngIf="contactForm.controls['contactFormName'].invalid && (contactForm.controls['contactFormName'].dirty || contactForm.controls['contactFormName'].touched)" class="alert alert-danger">
+                  <div *ngIf="contactForm.controls['contactFormName'].errors.required" style="color:red; padding-top:0.5%;">
+                  *Name is required.
+                </div>
+              </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="alterEgo">Email</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormEmail"
+            formControlName="contactFormEmail"
+            [(ngModel)]="itemEmail"
+
+            >
+            <div *ngIf="contactForm.controls['contactFormEmail'].invalid && (contactForm.controls['contactFormEmail'].dirty || contactForm.controls['contactFormEmail'].touched)" class="alert alert-danger">
+              <div *ngIf="contactForm.controls['contactFormEmail'].errors.required" style="color:red; padding-top:0.5%;">
+              *Email is required.
+            </div>
+            <div *ngIf="contactForm.controls['contactFormEmail'].errors.email" style="color:red; padding-top:0.5%;">
+              *Email addres is not correct.
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="alterEgo">Телефон</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormPhone"
+            formControlName="contactFormPhone"
+            [(ngModel)]="itemPhone">
+            <div *ngIf="contactForm.controls['contactFormPhone'].invalid && (contactForm.controls['contactFormPhone'].dirty || contactForm.controls['contactFormPhone'].touched)" class="alert alert-danger">
+              <div *ngIf="contactForm.controls['contactFormPhone'].errors.required" style="color:red; padding-top:0.5%;">
+              *Phone is required.
+            </div>
+            <div *ngIf="contactForm.controls['contactFormPhone'].errors.pattern" style="color:red; padding-top:0.5%;">
+              *Phone is not correct.
+            </div>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Номер на поръчка</label>
+            <input type="text"
+             class="form-control"
+             id="contactFormOrderNumber"
+              formControlName="contactFormOrderNumber"
+               [(ngModel)]="itemOrderNumber"
+              >
+
+          </div>
+
+          <div class="form-group">
+            <label for="alterEgo">Съобщение</label>
+            <textarea type="textarea"
+            class="form-control"
+            id="contactFormMessage"
+            formControlName="contactFormMessage"
+            [(ngModel)]="itemMessage">
+          </textarea>
+          </div>
+          <div class="buttoncenter">
+            <button type="submit" class="banner1button"  (click)=onSubmit() (click)=clearForm() [disabled]="!f.valid" >Изпрати</button>
+          </div>
+        </form>
+      </div>
+      </div>
+</div>
+</div>
+
+
+

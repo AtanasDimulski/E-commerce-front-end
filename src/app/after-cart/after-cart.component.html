@@ -1,0 +1,96 @@
+<div id="container">
+  <!--Form-->
+  <div id="formnmap">
+    <h2 id="mainTitleAfterCartCompoennt">Моля попълнете данните за доставка</h2>
+    <div class="formDiv">
+      <form [formGroup]="loginForm" #f='ngForm' novalidate>
+        <div class="formFileldsRowContainer">
+          <div class="form-group">
+            <label for="name">E-mail</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="loginFormName"
+            formControlName="loginFormName"
+            [(ngModel)]="itemName"
+            required>
+          </div>
+
+          <div class="form-group">
+            <label for="alterEgo">Име</label>
+            <input type="text"
+            class="form-control"
+            id="loginFormEmail"
+            formControlName="loginFormEmail"
+            [(ngModel)]="itemEmail">
+          </div>
+
+
+        <div class="form-group">
+          <label for="alterEgo">Фамилия</label>
+          <input type="text"
+          class="form-control"
+          id="loginFormEmail"
+          formControlName="loginFormEmail"
+          [(ngModel)]="itemEmail">
+        </div>
+
+
+      <div class="form-group">
+        <label for="alterEgo">Телефон</label>
+        <input type="text"
+        class="form-control"
+        id="loginFormEmail"
+        formControlName="loginFormEmail"
+        [(ngModel)]="itemEmail">
+      </div>
+
+      <label for="alterEgo">Метод на доставка</label>
+      <mat-form-field appearance="fill">
+
+        <select matNativeControl >
+          <option value="" selected>Метод на доставка</option>
+          <option value="volvo">Спиди офис</option>
+          <option value="saab" >Спиди адрес</option>
+          <option value="mercedes">Спиди АПС</option>
+        </select>
+      </mat-form-field>
+
+      <div class="form-group">
+        <label for="alterEgo">Град</label>
+        <input type="text"
+        class="form-control"
+        id="loginFormEmail"
+        formControlName="loginFormEmail"
+        [(ngModel)]="itemEmail">
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Пощенски код</label>
+        <input type="text"
+        class="form-control"
+        id="loginFormEmail"
+        formControlName="loginFormEmail"
+        [(ngModel)]="itemEmail">
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Адрес офис</label>
+        <input type="text"
+        class="form-control"
+        id="loginFormEmail"
+        formControlName="loginFormEmail"
+        [(ngModel)]="itemEmail">
+      </div>
+    </div>
+      <h2 class="afterCartDesc">*Тъй като grimo.bg е екслузивен партньор със Спиди. До вас достига най-добрата цена за доставка.</h2>
+      <h2 class="afterCartDesc">*Всички ваши лични данни се обработват спрямо <a  class = "innerMenuLink" [routerLink]="['/privacy']">политиката за защита на личните данни</a>.</h2>
+        <div class="buttoncenter">
+          <button type="submit" class="banner1button"  (click)=onSubmit() (click)=clearForm() [disabled]="!f.valid" >Изпрати поръчка</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>

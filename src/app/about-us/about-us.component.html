@@ -1,0 +1,181 @@
+<div id="container">
+  <img id="logo" src="../assets/logo.png">
+  <div id="privacyPolicyContainer">
+    <h2 class="subbTitle">Всички говорят за grimo.bg. Но знаете ли точно от къде идва той?</h2>
+    <h2 class="descText">
+      Историята в България на grimo.bg започва през 20-ти век, в далечната
+      1999г., с отварянето на първият физически магазин в страната.
+    </h2>
+
+    <h2 class="descText">
+      Още тогава нашата цел вече беше да направим света по-красиво място.
+      Всичките 7 милиона наши щастливи клиенти са доказателство за нас, че
+      сме на прав път. В същото време това е и огромен ангажимент.
+      Ангажимент за непрекъснато усъвършенстване, да избираме за вас найдобрите продукти и да ги доставяме на възможно най-ниска цена, да
+      бъдем винаги на ваше разположение и да превърнем пазаруването в
+      едно уникално изживяване. Ангажимент да продължим заедно по пътя си,
+      за да направим красотата по-достъпна. При всеки повод. Навсякъде по
+      света.
+    </h2>
+
+
+    <img class="whyUsImage" src="../../assets/whyUsFirstPick.JPG">
+
+    <!--Second separation-->
+    <h2 class="subbTitle">Ние предлагаме широк асортимент от парфюми и
+      козметика на страхотни цени</h2>
+
+    <h2 class="descText">
+      Благодарение на вас през тези 21 години се превърнахме вече и в
+      онлайн-магазина с най-богат асортимент от парфюми и козметика в
+      Европа. Днес при нас можете да изберете от над 10 000 уникални
+      продукта. Ние непрекъснато работим за това да осигуряваме нови и подобри оферти за вас. Вие сте закупили 50 000 продукта от нас само през
+      последните 6 месеца.
+    </h2>
+
+
+    <img class="whyUsImage" src="../../assets/aboutUsBrands.JPG">
+
+     <!--Third separation-->
+    <h2 class="subbTitle">Винаги на разположение за вас</h2>
+
+    <h2 class="descText">
+      Удовлетворението на нашите клиенти винаги е било и винаги ще бъде
+      наш основен приоритет. Екипът на grimo.bg е съставен изцяло от
+      специалисти в сферата на парфюмерията и козметиката. Всеки ден над
+      100 наши служители работят, за да гарантират, че всичко върви гладко
+      като швейцарски часовник. Ние говорим 17 езика и работим седем дни в
+      седмицата, така че можем да ви помогнем с подбора на продукти и
+      техническите проблеми по всяко време.
+    </h2>
+
+    <img class="whyUsImage" src="../../assets/aboutUsSecondPic.JPG">
+
+     <!--Fourth separation-->
+     <h2 class="subbTitle">Изпращаме до 3000 пакета на ден</h2>
+
+     <h2 class="descText">
+      Винаги се стараем да предлагаме най-подходящите продукти. В същото
+      време нашата цел е да ви ги доставим благополучно и на възможно найниска цена. Благодарение на собствените ни технологии, перфектния
+      мениджмънт на логистиката и дистрибуционния център, средното време,
+      необходимо на вашата поръчка да потегли към вас, е в срок от няколко
+      дни. Ние имаме капацитет да изпратим до 70 хиляди пакета на ден.
+      Просто за информация, миналата година доставихме до вас 150 хиляди
+      пакета.
+     </h2>
+
+     <img class="whyUsImage" src="../../assets/aboutUsThirdPic.JPG">
+
+      <!--Fifth separation-->
+      <h2 class="subbTitle">Партньори в България и къде може да ни откриете?</h2>
+
+      <h2 class="descText">
+        Grimo.bg има създадени дългогодишни партьорства с редица
+        чуждестранни и европейски компании по света. Точно поради това,
+        можем да предложим най-доброто обслужване и цени на нашите клиенти.
+      </h2>
+
+      <h2 class="descText">
+        От 2007г. grimo.bg е екслузивен партньор с най-големият производител
+        на парфюми в България ‘’Le Parfum original’’, която по социологически
+        проучвания в последните 5 години е най-търсената марка парфюми в
+        България. Това дава възможност на нашите редовни клиенти да ни
+        намерят във всички фирмени магазина на ‘’Le Parfum original’’ в цялата
+        страната.
+      </h2>
+
+      <h2 class="descText">
+        От 2020г. grimo.bg е екслузивен партньор със спедиторска фирма
+        ‘’Speedy’’, точно този факт, ни дава възможност да предлагаме найниските цени за доставка, както до техен офис, така и до врата.
+        Партьорство осигурява на нашите клиенти, както най-добрата цена, така
+        и бързи срокове за доставка.
+      </h2>
+
+
+      <h2 id="formTitle">Имате ли въпроси? Пишете ни.</h2>
+
+    <div id="formnmap">
+      <div class="formDiv">
+        <form [formGroup]="contactForm" #f='ngForm' novalidate>
+          <div class="form-group">
+            <label for="name">Вашето Име</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+             class="form-control"
+             id="contactFormName"
+              formControlName="contactFormName"
+               [(ngModel)]="itemName"
+                required>
+
+                <div *ngIf="contactForm.controls['contactFormName'].invalid && (contactForm.controls['contactFormName'].dirty || contactForm.controls['contactFormName'].touched)" class="alert alert-danger">
+                  <div *ngIf="contactForm.controls['contactFormName'].errors.required" style="color:red; padding-top:0.5%;">
+                  *Name is required.
+                </div>
+              </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="alterEgo">Email</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormEmail"
+            formControlName="contactFormEmail"
+            [(ngModel)]="itemEmail"
+
+            >
+            <div *ngIf="contactForm.controls['contactFormEmail'].invalid && (contactForm.controls['contactFormEmail'].dirty || contactForm.controls['contactFormEmail'].touched)" class="alert alert-danger">
+              <div *ngIf="contactForm.controls['contactFormEmail'].errors.required" style="color:red; padding-top:0.5%;">
+              *Email is required.
+            </div>
+            <div *ngIf="contactForm.controls['contactFormEmail'].errors.email" style="color:red; padding-top:0.5%;">
+              *Email addres is not correct.
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="alterEgo">Телефон</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormPhone"
+            formControlName="contactFormPhone"
+            [(ngModel)]="itemPhone">
+            <div *ngIf="contactForm.controls['contactFormPhone'].invalid && (contactForm.controls['contactFormPhone'].dirty || contactForm.controls['contactFormPhone'].touched)" class="alert alert-danger">
+              <div *ngIf="contactForm.controls['contactFormPhone'].errors.required" style="color:red; padding-top:0.5%;">
+              *Phone is required.
+            </div>
+            <div *ngIf="contactForm.controls['contactFormPhone'].errors.pattern" style="color:red; padding-top:0.5%;">
+              *Phone is not correct.
+            </div>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Номер на поръчка</label>
+            <input type="text"
+             class="form-control"
+             id="contactFormOrderNumber"
+              formControlName="contactFormOrderNumber"
+               [(ngModel)]="itemOrderNumber"
+              >
+
+          </div>
+
+          <div class="form-group">
+            <label for="alterEgo">Съобщение</label>
+            <textarea type="textarea"
+            class="form-control"
+            id="contactFormMessage"
+            formControlName="contactFormMessage"
+            [(ngModel)]="itemMessage">
+          </textarea>
+          </div>
+          <div class="buttoncenter">
+            <button type="submit" class="banner1button"  (click)=onSubmit() (click)=clearForm() [disabled]="!f.valid" >Изпрати</button>
+          </div>
+        </form>
+      </div>
+      </div>
+  </div>
+</div>

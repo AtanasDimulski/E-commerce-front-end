@@ -1,0 +1,114 @@
+<div id="container">
+  <!--First Component-->
+  <div id="firstComponent">
+    <h2 id="headerCart">Кошница</h2>
+    <hr id="hrUnderCart">
+  </div>
+  <!--Products-->
+  <div *ngFor="let c of categories; let i = index">
+    <div id="productsComponent">
+      <div id="closeButtonComponent">
+        <button id="closeButton"><fa-icon id="faiconsTimes" [icon]="faTimes"></fa-icon></button>
+      </div>
+      <div id="pictureComponent">
+        <img id="productPic" src="../../assets/prod.jpg">
+      </div>
+      <div id="descriptionComponent">
+        <div id="descriptionComponentLeftCol">
+          <h2 id="descTitle">
+            <span>Voucheron</span>
+            <span> Quatre Absolu de Nuit</span>
+          </h2>
+          <h2 id="descTitle">parfumna voda za jeni 100ml</h2>
+        </div>
+        <div id="counterComponent">
+          <button class="counterButton" [disabled]='lessThanZero' (click)="decreaseCount()"><fa-icon id="faiconsPlus" [icon]="faMinus"></fa-icon></button>
+          <div id="counterHeaderDiv">
+            <h2 id="counterHeader">{{count}} бр</h2>
+          </div>
+          <button class="counterButton" (click)="increaseCount()"><fa-icon id="faiconsPlus" [icon]="faPlus"></fa-icon></button>
+        </div>
+        <div id="priceIdivProduct">
+          <h2 id="priceProduct">{{total}} лв.</h2>
+        </div>
+      </div>
+    </div>
+    <hr id="hrUnderCart">
+  </div>
+  <!--CheckBox Container-->
+  <div id="checkBoxes">
+    <!--Gift Rap Check Box-->
+    <div id="giftRapCheckBox">
+      <mat-checkbox class="example-margin">
+        <div class="priceProduct">
+          <div class="priceProductTitle">
+            <h2 class="priceTitle">Подаръчна опаковка</h2>
+          </div>
+          <div class="priceProductValue">
+            <h2 class="giftRapPrice">9,00 лв.</h2>
+          </div>
+        </div>
+      </mat-checkbox>
+      <p class="checkBoxDesc">С удоволствие ще опаковаме всичко в луксознаподаръчна опаковка.</p>
+    </div>
+    <hr class="hrUnderCheckBox">
+    <!--Eco Rap Check Box-->
+    <div id="giftRapCheckBox">
+      <mat-checkbox class="example-margin">
+        <div class="priceProduct">
+          <div class="priceProductTitle">
+            <h2 class="priceTitle">Екологично опаковане</h2>
+          </div>
+          <div class="priceProductValue">
+            <h2 class="giftRapPrice">2,00 лв.</h2>
+          </div>
+        </div>
+      </mat-checkbox>
+      <p class="checkBoxDesc">Помогнете ни да опазим околната среда и  използвайте опаковка от рециклиран материал без пластмаса.</p>
+    </div>
+    <hr class="hrUnderCheckBox">
+    <!--Insurance Check Box-->
+         <div id="giftRapCheckBox">
+          <mat-checkbox class="example-margin">
+            <div class="priceProduct">
+              <div class="priceProductTitle">
+                <h2 class="priceTitle">Застраховка на пратката</h2>
+              </div>
+              <div class="priceProductValue">
+                <h2 class="giftRapPrice">1,00 лв.</h2>
+              </div>
+            </div>
+          </mat-checkbox>
+          <p class="checkBoxDesc">В случай на повреда или загуба на пратка не чакайте ситуацията да се реши в законовия срок.
+            Достатъчно е да ни съобщите за загубената или повредена пратка, да я документирате и ние веднага ще ви изпратим изцяло нова стока.</p>
+        </div>
+    <hr class="hrUnderCheckBox">
+  </div>
+  <!--Promo Code-->
+  <div id="promoCode">
+    <h2 id="priceProduct">Код на ваучер или отстъпка</h2>
+    <div class="searchContent">
+      <input type="text" id="inputFieldSearchBar">
+      <button id="searchBarButtonMobile">
+        <h2 id="promoCodeButtonText">OK</h2>
+      </button>
+    </div>
+  </div>
+  <!--Total Price-->
+  <div id="totalPriceContent">
+    <div id="totalPriceContentInner">
+      <div id="leftTotalPrice">
+        <h2 id="priceProduct">Обща цена на поръчката</h2>
+        <p id="vatIncludedField">с вклюбено ДДС</p>
+      </div>
+      <div id="rightTotalPrice">
+        <h2 id="vatIncludedPrice">{{total}} лв.</h2>
+      </div>
+    </div>
+  </div>
+  <!--Buttons-->
+  <div id="buttonsContainer">
+    <button class="banner1button">Поръчай</button>
+    <button id="backToShop">Върнете се в магазина</button>
+  </div>
+</div>

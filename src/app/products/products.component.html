@@ -1,0 +1,78 @@
+<div id="container">
+  <h2 id="titleCategories" >Парфюми</h2>
+  <p id="categoryDesc">Парфюмна колекция подбрана специално за вас с най-новите ни предложения</p>
+  <div id="sortingdiv">
+      <mat-form-field appearance="fill" style="width:30%;margin-top:5%;margin-left:7% ;font-size: 12px;">
+        <mat-label>Филтър</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let sort of sorts" [value]="sort.sort">
+              {{sort.sort}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+  </div>
+  <!--DESKTOP DISPLAY OF PRODUCTS-->
+  <div id="desktopDivcards">
+    <mat-grid-list cols="4" rowHeight="1:1.9">
+      <mat-grid-tile *ngFor="let c of categories; let i = index">
+        <mat-card id="matcard">
+          <div id="divHeartAndImg">
+            <div class="heartAndDiscount">
+
+              <div class="heartAndDiscountLeftCol">
+                <div class="sale">
+                  <h2 class="saleButtonTextStyle">%</h2>
+               </div>
+
+               </div>
+                <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+            </div>
+            <a routerLink="/product" (click)="goToProject(5)"><img id="matcardImg" src={{c.url}}></a>
+
+          </div>
+            <div class="cardheader">
+              <button id="freedelivery" disabled>Безплатна доставка</button>
+              <h1 class="brand">Georgio Armani</h1>
+              <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">{{c.name}}</h3></a>
+              <p class="productcategory">{{c.description}}</p>
+              <p class="productprice">от {{c.price}} лв.</p>
+            </div>
+
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </div>
+  <!--MOBILE DISPLAY OF PRODUCTS-->
+  <div id="divcards">
+    <mat-grid-list cols="2" rowHeight="3:6">
+      <mat-grid-tile *ngFor="let c of categories; let i = index">
+        <mat-card id="matcard">
+          <div id="divHeartAndImg">
+            <div class="heartAndDiscount">
+
+              <div class="heartAndDiscountLeftCol">
+                <div class="sale">
+                  <h2 class="saleButtonTextStyle">%</h2>
+               </div>
+
+               </div>
+                <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+            </div>
+            <a routerLink="/product" (click)="goToProject(5)"><img id="matcardImg" src={{c.url}}></a>
+
+          </div>
+            <div class="cardheader">
+              <button id="freedelivery" disabled>Безплатна доставка</button>
+              <h1 class="brand">Georgio Armani</h1>
+              <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">{{c.name}}</h3></a>
+              <p class="productcategory">{{c.description}}</p>
+              <p class="productprice">от {{c.price}} лв.</p>
+            </div>
+
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </div>
+</div>

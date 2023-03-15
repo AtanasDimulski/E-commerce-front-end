@@ -1,0 +1,662 @@
+<div id="container">
+
+
+    <!--SLIDE SHOW-->
+    <swiper [config]="config">
+        <div class="swiper-wrapper" id="firstswiper">
+            <div class="swiper-slide">
+                <img id="slideshowimg" src="../../assets/prod.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img id="slideshowimg" src="../../assets/prod2.jpg">
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </swiper>
+
+
+    <!--TITLE,DESCRIPTION,RATING,SIZING-->
+    <div id="productinfo">
+        <h1 id="producttitle">My Way</h1>
+        <h3 id="productsubtitle">Georgio Armani</h3>
+        <h3 id="productcategorytext">Парфюми</h3>
+        <h3 id="productprice">{{this.price}}</h3>
+        <hr id="productinfohr">
+        <p id="productdesc">My Way от Giorgio Armani е цветен аромат за жени.
+             Това е нов аромат. My Way стартира през 2020 г.
+              My Way е създаден от Carlos Benaim и Bruno Jovanovic.</p>
+        <div id="productrating">
+            <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+            <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+            <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+            <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+            <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+        </div>
+        <div id="sizing">
+            <div class="option" *ngFor="let size of sizes; let i = index;" >
+                <input type="radio" name="radAnswer" class="rb"  [value]="i">
+                <label class="ml">{{size.viewValue}}</label>
+                <span class="spacer"></span>
+                <label class="fakeprice">{{size.fakeprice}}</label>
+                <label class="price">{{size.price}}</label>
+            </div>
+
+    </div>
+
+    <hr id="productinfohr">
+    <!--MORE PRODUCT DESCRIPTION-->
+    <div id="moredesc">
+
+        <div class="info">
+            <fa-icon class="facheck" [icon]="faCheck"></fa-icon>
+            <p class="infotext">Безплатна доставка</p>
+        </div>
+        <div class="info">
+            <fa-icon class="facheck" [icon]="faCheck"></fa-icon>
+            <p class="infotext">Намалена цена</p>
+        </div>
+        <div class="info">
+            <fa-icon class="facheck" [icon]="faCheck"></fa-icon>
+            <p class="infotext">Наличен</p>
+        </div>
+        <div class="info">
+            <div id="counterComponent">
+                <button class="counterButton" [disabled]='lessThanZero' (click)="decreaseCount()">
+                  <div class="counterButtonIconInnerDiv">
+                    <fa-icon class="faiconsPlus" [icon]="faMinus"></fa-icon>
+                  </div>
+                </button>
+                <div id="counterHeaderDiv">
+                  <h2 id="counterHeader">{{count}} бр</h2>
+                </div>
+                <button class="counterButton" (click)="increaseCount()">
+                  <div class="counterButtonIconInnerDiv">
+                    <fa-icon class="faiconsPlus" [icon]="faPlus"></fa-icon>
+                  </div>
+                </button>
+              </div>
+            <button class="buttonorder" (click)="showPopUp()">Добави в количката</button>
+        </div>
+
+        <!--Pop Up Added to cart-->
+        <div id="popUpContainer" *ngIf="popUpDisplay">
+          <div id="popUpAddedToCart" >
+            <fa-icon id="faiconsTimes" (click)="showPopUp()" [icon]="faTimes"></fa-icon>
+            <h2 id="popUpAddedToCartMainTittle">Добавено в количка</h2>
+
+            <!--Buttons-->
+            <div id="buttonsContainer">
+              <button id="backToShop" (click)="showPopUp()" >Продължи пазаруването</button>
+              <button class="banner1button" [routerLink]="['/cart']" >Отиди в количката</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="expansionpan">
+            <mat-accordion>
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  За продукта
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="text">I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Информация за доставка
+                </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <p class="text">I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Оценка
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div id="reviewsCombinedGradeContainer">
+                <h2 id="reviewsComponentFirstHeader">{{ratingValue}}</h2>
+                <div *ngIf="ratingValue === 1">
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                </div>
+
+                <div *ngIf="ratingValue === 2">
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                </div>
+
+                <div  *ngIf="ratingValue === 3" >
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                </div>
+
+                <div *ngIf="ratingValue === 4">
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                </div>
+
+                <div *ngIf="ratingValue === 5">
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                </div>
+              </div>
+              <button id="buttonWriteReview" (click)="showReviewContainer()">Напиши Оценка</button>
+              <hr>
+              <div *ngFor="let user of users; index as i">
+                <h2 id="reviewsName">{{user.name}}</h2>
+                  <div *ngIf="user.reviewCountStars === 1">
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  </div>
+
+                  <div *ngIf="user.reviewCountStars === 2">
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  </div>
+
+                  <div  *ngIf="user.reviewCountStars === 3" >
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  </div>
+
+                  <div *ngIf="user.reviewCountStars === 4">
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastarNotClicked" [icon]="faStar"></fa-icon>
+                  </div>
+
+                  <div *ngIf="user.reviewCountStars === 5">
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                    <fa-icon class="fastar" [icon]="faStar"></fa-icon>
+                  </div>
+
+                  <h2 id="reviewText">{{user.reviewText}}</h2>
+              </div>
+            </mat-expansion-panel>
+
+            <div id="writeReviewContainer" *ngIf="reviewContainerOpen">
+              <div id="writeReviewContainerInner">
+                <fa-icon id="faiconsTimes" (click)="showReviewContainer()" (click)="showPopUpNotLogged()" [icon]="faTimes"></fa-icon>
+                <h2 id="popUpAddedToCartMainTittle">Добавяне на ново мнение</h2>
+                <!--Form-->
+                <div id="formReviews">
+                  <div class="formDiv">
+                    <form [formGroup]="loginForm" #f='ngForm' novalidate>
+                      <div class="form-group">
+                        <label for="name" class="labelForm">Име</label>
+                        <input type="text"
+                        class="form-control"
+                        id="loginFormName"
+                          formControlName="loginFormName"
+                          [(ngModel)]="itemName"
+                            required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="alterEgo" class="labelForm">Вашето мнение</label>
+                        <input type="text"
+                        class="form-control"
+                        id="loginFormMessage"
+                        formControlName="loginFormMessage"
+                        [(ngModel)]="itemMessage">
+                      </div>
+
+
+                <!--Start Rating Component-->
+                <h2 id="starRaitingTittle">Цялостна оценка</h2>
+                <div id="starRatingContainer">
+                  <button class="buttonReviews" (click)="clickFirstStar()"><fa-icon class="fastarNotClicked" [icon]="faStar" [ngClass]="{'firstFastarClicked': firstStarClicked}"></fa-icon></button>
+                  <button class="buttonReviews" (click)="clickSecondStar()"><fa-icon class="fastarNotClicked" [icon]="faStar" [ngClass]="{'firstFastarClicked': secondStarClicked}"></fa-icon></button>
+                  <button class="buttonReviews" (click)="clickThirdStar()"><fa-icon fa-icon class="fastarNotClicked" [icon]="faStar" [ngClass]="{'firstFastarClicked': thirdStarClicked}"></fa-icon></button>
+                  <button class="buttonReviews" (click)="clickFourthStar()"><fa-icon fa-icon class="fastarNotClicked" [icon]="faStar" [ngClass]="{'firstFastarClicked': fourthStarClicked}"></fa-icon></button>
+                  <button class="buttonReviews" (click)="clickFifthStar()"><fa-icon fa-icon class="fastarNotClicked" [icon]="faStar" [ngClass]="{'firstFastarClicked': fifthStarClicked}"></fa-icon></button>
+                </div>
+
+                <div id="buttoncenter">
+                  <button type="submit" class="banner1button"  (click)=onSubmit() (click)=clearForm()  [disabled]="!f.valid" >Изпрати оценка</button>
+                </div>
+              </form>
+            </div>
+           </div>
+          </div>
+        </div>
+
+        <!--Pop Up Not Logged In-->
+        <div id="popUpContainer" *ngIf="popUpNotLoggedDisplay">
+          <div id="popUpAddedToCart" >
+            <fa-icon id="faiconsTimes" (click)="showPopUpNotLogged()" [icon]="faTimes"></fa-icon>
+            <h2 id="popUpAddedToCartMainTittle">Влезте в акаунта си</h2>
+
+            <!--Buttons-->
+            <div id="buttonsContainer">
+              <button id="backToShop" (click)="showPopUp()" >Вход</button>
+              <button class="banner1button">Регистрация</button>
+            </div>
+          </div>
+        </div>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  За марка
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="text">I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+          </mat-accordion>
+        </div>
+
+
+    </div>
+
+
+    <!--PROPOSED PRODUCTS SLIDER-->
+    <h1 id="topproductstitle">Предложения специално за вас</h1>
+    <div id="topproducts">
+
+         <swiper [config]="config1">
+             <div class="swiper-wrapper" id="swiperWrapperTopProducts">
+                 <div class="swiper-slide" id="swiperSlideTopProducts">
+                     <div class="product">
+                         <div class="heartAndDiscount">
+
+                           <div class="heartAndDiscountLeftCol">
+                             <div class="sale">
+                               <h2 class="saleButtonTextStyle">%</h2>
+                            </div>
+
+                            </div>
+                             <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                         </div>
+
+                         <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                         <button class="freedelivery" disabled>Безплатна доставка</button>
+                         <h1 class="brand">Georgio Armani1</h1>
+                         <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                         <p class="productcategory">Парфюми</p>
+                         <p class="productprice">от 150,59лв</p>
+                     </div>
+                 </div>
+                 <div class="swiper-slide" id="swiperSlideTopProducts">
+                     <div class="product">
+                      <div class="heartAndDiscount">
+
+                        <div class="heartAndDiscountLeftCol">
+                          <div class="sale">
+                            <h2 class="saleButtonTextStyle">%</h2>
+                         </div>
+
+                         </div>
+                          <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                      </div>
+
+                         <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                         <button class="freedelivery" disabled>Безплатна доставка</button>
+                         <h1 class="brand">Georgio Armani2</h1>
+                         <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                         <p class="productcategory">Парфюми</p>
+                         <p class="productprice">от 150,59лв</p>
+                     </div>
+                 </div>
+
+                 <div class="swiper-slide" id="swiperSlideTopProducts">
+                     <div class="product">
+                      <div class="heartAndDiscount">
+
+                        <div class="heartAndDiscountLeftCol">
+                          <div class="sale">
+                            <h2 class="saleButtonTextStyle">%</h2>
+                         </div>
+
+                         </div>
+                          <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                      </div>
+
+                         <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                         <button class="freedelivery" disabled>Безплатна доставка</button>
+                         <h1 class="brand">Georgio Armani3</h1>
+                         <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                         <p class="productcategory">Парфюми</p>
+                         <p class="productprice">от 150,59лв</p>
+                     </div>
+                 </div>
+                 <div class="swiper-slide" id="swiperSlideTopProducts">
+                     <div class="product">
+                      <div class="heartAndDiscount">
+
+                        <div class="heartAndDiscountLeftCol">
+                          <div class="sale">
+                            <h2 class="saleButtonTextStyle">%</h2>
+                         </div>
+
+                         </div>
+                          <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                      </div>
+
+                         <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                         <button class="freedelivery" disabled>Безплатна доставка</button>
+                         <h1 class="brand">Georgio Armani4</h1>
+                         <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                         <p class="productcategory">Парфюми</p>
+                         <p class="productprice">от 150,59лв</p>
+                     </div>
+                 </div>
+
+                 <div class="swiper-slide" id="swiperSlideTopProducts">
+                     <div class="product">
+                      <div class="heartAndDiscount">
+
+                        <div class="heartAndDiscountLeftCol">
+                          <div class="sale">
+                            <h2 class="saleButtonTextStyle">%</h2>
+                         </div>
+
+                         </div>
+                          <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                      </div>
+
+                         <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                         <button class="freedelivery" disabled>Безплатна доставка</button>
+                         <h1 class="brand">La Perfume5</h1>
+                         <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                         <p class="productcategory">Парфюми</p>
+                         <p class="productprice">от 150,59лв</p>
+                     </div>
+                 </div>
+
+                 <div class="swiper-slide" id="swiperSlideTopProducts">
+                     <div class="product">
+                      <div class="heartAndDiscount">
+
+                        <div class="heartAndDiscountLeftCol">
+                          <div class="sale">
+                            <h2 class="saleButtonTextStyle">%</h2>
+                         </div>
+
+                         </div>
+                          <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                      </div>
+
+                         <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                         <button class="freedelivery" disabled>Безплатна доставка</button>
+                         <h1 class="brand">La Perfume6</h1>
+                         <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                         <p class="productcategory">Парфюми</p>
+                         <p class="productprice">от 150,59лв</p>
+                     </div>
+                 </div>
+
+                 <div class="swiper-slide" id="swiperSlideTopProducts">
+                     <div class="product">
+                      <div class="heartAndDiscount">
+
+                        <div class="heartAndDiscountLeftCol">
+                          <div class="sale">
+                            <h2 class="saleButtonTextStyle">%</h2>
+                         </div>
+
+                         </div>
+                          <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                      </div>
+
+                         <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                         <button class="freedelivery" disabled>Безплатна доставка</button>
+                         <h1 class="brand">Georgio Armani7</h1>
+                         <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                         <p class="productcategory">Парфюми</p>
+                         <p class="productprice">от 150,59лв</p>
+                     </div>
+                 </div>
+
+                 <div class="swiper-slide" id="swiperSlideTopProducts">
+                     <div class="product">
+                      <div class="heartAndDiscount">
+
+                        <div class="heartAndDiscountLeftCol">
+                          <div class="sale">
+                            <h2 class="saleButtonTextStyle">%</h2>
+                         </div>
+
+                         </div>
+                          <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                      </div>
+
+                         <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                         <button class="freedelivery" disabled>Безплатна доставка</button>
+                         <h1 class="brand">Georgio Armani8</h1>
+                         <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                         <p class="productcategory">Парфюми</p>
+                         <p class="productprice">от 150,59лв</p>
+                     </div>
+                 </div>
+             </div>
+         </swiper>
+     </div>
+
+
+    <!--PRODUCT ON SALE SLIDER-->
+    <h1 id="saleproductstitle">Продукти в промоция сега</h1>
+    <h3 id="saleproductssubtitle">Промоции без край само за вас</h3>
+    <div id="topproducts">
+
+      <swiper [config]="config1">
+          <div class="swiper-wrapper" id="swiperWrapperTopProducts">
+              <div class="swiper-slide" id="swiperSlideTopProducts">
+                  <div class="product">
+                    <div class="heartAndDiscount">
+
+                      <div class="heartAndDiscountLeftCol">
+                        <div class="sale">
+                          <h2 class="saleButtonTextStyle">%</h2>
+                       </div>
+
+                       </div>
+                        <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                    </div>
+
+                      <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                      <button class="freedelivery" disabled>Безплатна доставка</button>
+                      <h1 class="brand">Georgio Armani1</h1>
+                      <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                      <p class="productcategory">Парфюми</p>
+                      <p class="productprice">от 150,59лв</p>
+                  </div>
+              </div>
+              <div class="swiper-slide" id="swiperSlideTopProducts">
+                  <div class="product">
+                    <div class="heartAndDiscount">
+
+                      <div class="heartAndDiscountLeftCol">
+                        <div class="sale">
+                          <h2 class="saleButtonTextStyle">%</h2>
+                       </div>
+
+                       </div>
+                        <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                    </div>
+
+                      <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                      <button class="freedelivery" disabled>Безплатна доставка</button>
+                      <h1 class="brand">Georgio Armani2</h1>
+                      <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                      <p class="productcategory">Парфюми</p>
+                      <p class="productprice">от 150,59лв</p>
+                  </div>
+              </div>
+
+              <div class="swiper-slide" id="swiperSlideTopProducts">
+                  <div class="product">
+                    <div class="heartAndDiscount">
+
+                      <div class="heartAndDiscountLeftCol">
+                        <div class="sale">
+                          <h2 class="saleButtonTextStyle">%</h2>
+                       </div>
+
+                       </div>
+                        <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                    </div>
+
+                      <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                      <button class="freedelivery" disabled>Безплатна доставка</button>
+                      <h1 class="brand">Georgio Armani3</h1>
+                      <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                      <p class="productcategory">Парфюми</p>
+                      <p class="productprice">от 150,59лв</p>
+                  </div>
+              </div>
+              <div class="swiper-slide" id="swiperSlideTopProducts">
+                  <div class="product">
+                    <div class="heartAndDiscount">
+
+                      <div class="heartAndDiscountLeftCol">
+                        <div class="sale">
+                          <h2 class="saleButtonTextStyle">%</h2>
+                       </div>
+
+                       </div>
+                        <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                    </div>
+
+                      <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                      <button class="freedelivery" disabled>Безплатна доставка</button>
+                      <h1 class="brand">Georgio Armani4</h1>
+                      <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                      <p class="productcategory">Парфюми</p>
+                      <p class="productprice">от 150,59лв</p>
+                  </div>
+              </div>
+
+              <div class="swiper-slide" id="swiperSlideTopProducts">
+                  <div class="product">
+                    <div class="heartAndDiscount">
+
+                      <div class="heartAndDiscountLeftCol">
+                        <div class="sale">
+                          <h2 class="saleButtonTextStyle">%</h2>
+                       </div>
+
+                       </div>
+                        <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                    </div>
+
+                      <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                      <button class="freedelivery" disabled>Безплатна доставка</button>
+                      <h1 class="brand">La Perfume5</h1>
+                      <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                      <p class="productcategory">Парфюми</p>
+                      <p class="productprice">от 150,59лв</p>
+                  </div>
+              </div>
+
+              <div class="swiper-slide" id="swiperSlideTopProducts">
+                  <div class="product">
+                    <div class="heartAndDiscount">
+
+                      <div class="heartAndDiscountLeftCol">
+                        <div class="sale">
+                          <h2 class="saleButtonTextStyle">%</h2>
+                       </div>
+
+                       </div>
+                        <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                    </div>
+
+                      <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                      <button class="freedelivery" disabled>Безплатна доставка</button>
+                      <h1 class="brand">La Perfume6</h1>
+                      <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                      <p class="productcategory">Парфюми</p>
+                      <p class="productprice">от 150,59лв</p>
+                  </div>
+              </div>
+
+              <div class="swiper-slide" id="swiperSlideTopProducts">
+                  <div class="product">
+                    <div class="heartAndDiscount">
+
+                      <div class="heartAndDiscountLeftCol">
+                        <div class="sale">
+                          <h2 class="saleButtonTextStyle">%</h2>
+                       </div>
+
+                       </div>
+                        <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                    </div>
+
+                      <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                      <button class="freedelivery" disabled>Безплатна доставка</button>
+                      <h1 class="brand">Georgio Armani7</h1>
+                      <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                      <p class="productcategory">Парфюми</p>
+                      <p class="productprice">от 150,59лв</p>
+                  </div>
+              </div>
+
+              <div class="swiper-slide" id="swiperSlideTopProducts">
+                  <div class="product">
+                    <div class="heartAndDiscount">
+
+                      <div class="heartAndDiscountLeftCol">
+                        <div class="sale">
+                          <h2 class="saleButtonTextStyle">%</h2>
+                       </div>
+
+                       </div>
+                        <div class="iconbutton"><fa-icon id="faiconsHeart" [icon]="faHeart"></fa-icon></div>
+                    </div>
+
+                      <a routerLink="/product" (click)="goToProject(5)"><img src="../../assets/prod.jpg" class="productimg"></a>
+                      <button class="freedelivery" disabled>Безплатна доставка</button>
+                      <h1 class="brand">Georgio Armani8</h1>
+                      <a routerLink="/product" (click)="goToProject(5)"><h3 class="producttitle">Liqid Gold</h3></a>
+                      <p class="productcategory">Парфюми</p>
+                      <p class="productprice">от 150,59лв</p>
+                  </div>
+              </div>
+          </div>
+        </swiper>
+      </div>
+
+</div>

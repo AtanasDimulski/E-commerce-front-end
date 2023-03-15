@@ -1,0 +1,201 @@
+<div id="container">
+  <!--First Component-->
+  <div id="brandAndSizePanel">
+    <div class="half">
+
+      <h1 class="header">Добави Марка</h1>
+
+      <p class="subheader">Име</p>
+      <input type="text" class="input" #brandName>
+      <p class="subheader">Описание</p>
+      <textarea id="brandDesc" #brandDesc rows="8" cols="50"></textarea>
+      <br>
+      <button class="createButt" (click)="createBrand(brandName.value,brandDesc.value)">Създай Марка</button>
+    </div>
+
+    <div class="half">
+      <h1 class="header">Добави Размер</h1>
+      <div>
+        <mat-radio-button (change)="setSizeOption(true)" value="1">Цвят</mat-radio-button>
+        <mat-radio-button (change)="setSizeOption(false)" value="2">Размер</mat-radio-button>
+
+        <p class="subheader">Име/Стойност на Цвят/Размер</p>
+      <input type="text" class="input" #sizeOrcolorName>
+      <br>
+      <button class="createButt" (click)="createSize(sizeOrcolorName.value)">Създай Размер</button>
+      </div>
+    </div>
+
+  </div>
+
+  <hr id="hr">
+  <div id="productPanel">
+    <h1 class="header">Добави Продукт</h1>
+
+    <div id="imagePanel">
+
+      <div id="inserTitleImgPanel">
+        <div id="addImg">
+          <input
+            hidden
+            #fileInput
+            type="file"
+            id="file"
+            name = "file"
+            (change)="setFilename(fileInput.files)"
+            />
+          <button id="addTitleImageButton" (click)="fileInput.click()">+ Избери титулярна снимка</button>
+          <img id="titleimg" src="this.imageSource">
+        </div>
+        <button id="saveTitleimg" (click)="saveImg(null)">+ Запази титулярна снимка</button>
+      </div>
+
+      <div id="InsertImgsPanel">
+        <div id="uploadedImgs">
+          <div id="uploadedList">
+            <p id="display" *ngFor="let img of this.uploaded">
+              Име: {{img.name}} / ЦвятИлиРазмер: {{img.color}}
+            </p>
+          </div>
+          <input
+          hidden
+          #fileInput
+          type="file"
+          id="file"
+          name = "file"
+          (change)="setFilename(fileInput.files)"
+          />
+        <button id="addImageButton" (click)="fileInput.click()">+ Избери снимка</button>
+
+        <p class="subheader">Размер/Цвят</p>
+        <input type="text" class="input" #sizeOrcolorImgName>
+        </div>
+        <button id="saveImg" (click)="saveImg(sizeOrcolorImgName.value)">+ Запази снимка</button>
+      </div>
+
+    </div>
+
+    <div id="detailsPanel">
+      <div id="firstSec">
+        <div class="oneThird">
+          <p class="subheader">Име</p>
+          <input type="text" id="prodName" class="input" #prodName>
+
+          <p class="subheader">Youtube Link</p>
+          <input type="text" id="prodName" class="input" #link>
+
+        </div>
+
+        <div class="oneThird">
+          <p class="subheader">Кратко Описание</p>
+          <textarea id="brandDesc" #prodShortDesc rows="8" cols="50"></textarea>
+        </div>
+
+        <div class="oneThird">
+          <p class="subheader">Дълго Описание</p>
+          <textarea id="brandDesc" #prodLongDesc rows="8" cols="50"></textarea>
+        </div>
+      </div>
+
+      <div id="secondSec">
+
+          <div id="prodSizeSection">
+            <div id="productSizes">
+              <p id="display" *ngFor="let size of this.prodSizes">
+                Размер: {{size.size.size_amount}} / Цвят: {{size.size.color}}
+              </p>
+            </div>
+
+            <p class="subheader">Размер/Цвят</p>
+            <mat-form-field appearance="fill">
+              <mat-select #size>
+                <mat-option *ngFor="let s of this.sizes" [value]="s.sizeId" >
+                  Цвят: {{s.color}} / Размер: {{s.size_amount}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+            
+
+
+            <p class="subheader">Реална Цена</p>
+          <input type="text" class="input" #realPrice>
+
+
+          <p class="subheader">Фалшива(зачеркната) Цена</p>
+          <input type="text" class="input" #fakePrice>
+          <br>
+          <button id="addProdSizeButt" (click)="createProductSize(size.value,realPrice.value,fakePrice.value)">Добави Размер/Цвят</button>
+        </div>
+
+        <div id="catsandbrand">
+          <p class="subheader">Марка</p>
+            
+              <select [(ngModel)]="this.brandChosen">
+                <option *ngFor="let b of this.brands">
+                 {{b.name}}
+                </option>
+              </select>
+            
+
+            <p class="subheader">Подподкатегория</p>
+            
+              <select [(ngModel)]="this.prodsubsubChosen">
+                <option *ngFor="let c of this.subsubcategories">
+                  {{c.name}}
+                </option>
+              </select>
+
+        </div>
+      </div>
+
+
+
+
+      <button id="addProduct" (click)="createProduct(prodName.value,prodShortDesc.value,prodLongDesc.value,link.value)">Запази Продукт</button>
+
+    </div>
+
+  </div>
+  <div id="categories">
+            <p class="subheader">Категория</p>
+            
+              <select [(ngModel)]="this.catChosen">
+                <option *ngFor="let c of this.categories">{{c.name}}</option>
+              </select>
+            
+
+
+            <p class="subheader">Подкатегория</p>
+           
+              <select [(ngModel)]="this.subChosen">
+                <option *ngFor="let s of this.subcategories">{{s.name}}</option>
+              </select>
+            
+
+            <button id="addProduct" (click)="AttachSubToCat()">Attach</button>
+
+            <hr>
+
+            <p class="subheader">Подкатегория</p>
+            
+              <select [(ngModel)]="this.sub2Chosen">
+                <option *ngFor="let e of this.subcategories">
+                  {{e.name}}
+                </option>
+              </select>
+            
+
+            <p class="subheader">Подподкатегория</p>
+            
+              <select [(ngModel)]="this.subsubChosen">
+                <option *ngFor="let f of this.subsubcategories">
+                  {{f.id}}/{{f.name}}
+                </option>
+              </select>
+            
+
+
+
+            <button id="addProduct" (click)="AttachSubsubToSub()">Attach</button>
+  </div>
+</div>

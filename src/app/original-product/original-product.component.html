@@ -1,0 +1,147 @@
+<div id="container">
+  <h2 id="mainTitle">100% гаранция за оригинални продукти</h2>
+  <div id="privacyPolicyContainer">
+    <h2 class="descText">
+      Стоката, която можете да закупите при нас, купуваме единствено от
+      проверени оторизирани доставчици. По този начин, получаваме и
+      съответно предлагаме само оригинална и качествена стока. Продуктите,
+      включени в нашето предложение, са от оторизираните търговски
+      представители на брандовете или директно от производителите. Като
+      така ние гарантираме на своите клиенти, че при нас не достигат стоки със
+      съмнителен или недоказан произход.
+    </h2>
+
+    <h2 class="descText">
+      Ние сме на пазара от 1999г., започвайки с физически магазини и до
+      момента сме обслужили десетки хиляди клиенти. От самото начало
+      продаваме единствено оригинални продукти. Обратното поведение е
+      изцяло в разрез с нашия етичен кодекс. Нашата продължителна
+      търговска дейност, свързана с постоянния ни растеж, е доказателство за
+      високото качество на предлаганите от нас услуги и продавана стока.
+    </h2>
+
+    <h2 class="descText">
+      Като гаранция за качеството на продуктите могат да послужат и добрите
+      отзиви на нашите партньори. Нашите продукти доставяме до множество
+      стандартни парфюмерии по цялата страна и не само, извършваме
+      дистрибуторска дейност в множество страни както в Европа, така и извън
+      нея. Редица аптеки, козметични салони и търговски обекти в Англия,
+      Германия, Обединени арабски емирства, Йордания, Румъния, Гърция и
+      Кипър.
+    </h2>
+
+    <!--Second separation-->
+    <h2 class="subbTitle">Защо предлагаме толкова ниски цени?</h2>
+
+    <h2 class="descText">
+      „Защо предлагане толкова ниски цени?“ Това е един от най- често
+      задаваните въпроси. Как е възможно нашите цени да бъдат понякога и
+      със 70% по-ниски, отколкото в нормалните магазини?
+    </h2>
+
+    <h2 class="descText">
+      Отговорът е много лесен. За разлика от стандартните магазини, ние
+      работим с много по-ниска печалба. Също така, не плащаме скъпи наеми
+      за магазини в търговски центрове или на главни улици. Наемът на един,
+      дори и малък магазин понякога превишава големи суми. Също така,
+      трябва да отбележим, че ние представляваме една от най-големите
+      дистрибуторски фирми на Балканите и продаваме повече продукти,
+      отколкото стандартните магазини, следователно купуваме повече от
+      нашите доставчици и така получаваме най-добрата покупателна цена на
+      самите продукти.
+    </h2>
+
+    <h2 class="descText">
+      Благодарение на тези обстоятелства ние можем да Ви предложим цени,
+      които няма да намерите на друго място
+    </h2>
+
+    <img id="imageOriginal" src="../../assets/guaranteedByGrimo.JPG">
+
+    <h2 id="formTitle">Имате ли въпроси? Пишете ни.</h2>
+
+    <div id="formnmap">
+      <div class="formDiv">
+        <form [formGroup]="contactForm" #f='ngForm' novalidate>
+          <div class="form-group">
+            <label for="name">Вашето Име</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+             class="form-control"
+             id="contactFormName"
+              formControlName="contactFormName"
+               [(ngModel)]="itemName"
+                required>
+
+                <div *ngIf="contactForm.controls['contactFormName'].invalid && (contactForm.controls['contactFormName'].dirty || contactForm.controls['contactFormName'].touched)" class="alert alert-danger">
+                  <div *ngIf="contactForm.controls['contactFormName'].errors.required" style="color:red; padding-top:0.5%;">
+                  *Name is required.
+                </div>
+              </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="alterEgo">Email</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormEmail"
+            formControlName="contactFormEmail"
+            [(ngModel)]="itemEmail"
+
+            >
+            <div *ngIf="contactForm.controls['contactFormEmail'].invalid && (contactForm.controls['contactFormEmail'].dirty || contactForm.controls['contactFormEmail'].touched)" class="alert alert-danger">
+              <div *ngIf="contactForm.controls['contactFormEmail'].errors.required" style="color:red; padding-top:0.5%;">
+              *Email is required.
+            </div>
+            <div *ngIf="contactForm.controls['contactFormEmail'].errors.email" style="color:red; padding-top:0.5%;">
+              *Email addres is not correct.
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="alterEgo">Телефон</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormPhone"
+            formControlName="contactFormPhone"
+            [(ngModel)]="itemPhone">
+            <div *ngIf="contactForm.controls['contactFormPhone'].invalid && (contactForm.controls['contactFormPhone'].dirty || contactForm.controls['contactFormPhone'].touched)" class="alert alert-danger">
+              <div *ngIf="contactForm.controls['contactFormPhone'].errors.required" style="color:red; padding-top:0.5%;">
+              *Phone is required.
+            </div>
+            <div *ngIf="contactForm.controls['contactFormPhone'].errors.pattern" style="color:red; padding-top:0.5%;">
+              *Phone is not correct.
+            </div>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Номер на поръчка</label>
+            <input type="text"
+             class="form-control"
+             id="contactFormOrderNumber"
+              formControlName="contactFormOrderNumber"
+               [(ngModel)]="itemOrderNumber"
+              >
+
+          </div>
+
+          <div class="form-group">
+            <label for="alterEgo">Съобщение</label>
+            <textarea type="textarea"
+            class="form-control"
+            id="contactFormMessage"
+            formControlName="contactFormMessage"
+            [(ngModel)]="itemMessage">
+          </textarea>
+          </div>
+          <div class="buttoncenter">
+            <button type="submit" class="banner1button"  (click)=onSubmit() (click)=clearForm() [disabled]="!f.valid" >Изпрати</button>
+          </div>
+        </form>
+      </div>
+      </div>
+</div>
+</div>

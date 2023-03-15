@@ -1,0 +1,148 @@
+@media only screen and (max-width: 440px){
+  #container{
+    width:100%;
+    height: 100%;
+    left:0;
+    padding:0;
+    padding-top:40%;
+    background-color: white;
+  }
+    /*SLIDE SHOW*/
+    #firstswiper{
+      height:250px;
+  }
+  .swiper{
+      width:100%;
+      height:100%;
+    }
+    .swiper-wrapper{
+      height:350px;
+      width: 400px;
+    }
+  #slideshowimg{
+      width:100%;
+      height:100%;
+
+  }
+  #titletextblack{
+      color: black;
+      font-size: 4.7vw;
+      text-align: center;
+      position: relative;
+      margin-top: -35%;
+      padding-left: 12%;
+      padding-right: 12%;
+  }
+  #titletextwhite{
+      color: white;
+      font-size: 4.7vw;
+      text-align: center;
+      position: relative;
+      margin-top: -32%;
+      padding-left: 12%;
+      padding-right: 12%;
+  }
+  /* Contact Details Styling*/
+  .mainTitle{
+    text-align:center;
+    margin:0;
+    padding-top:5%;
+    padding-bottom:3%;
+  }
+.topSubTittleEachComponent{
+  text-align:center;
+  padding-top:3%;
+  font-size: 0.8em;
+  margin:0;
+}
+.normalSubTitle{
+  text-align:center;
+  padding-top:1%;
+  font-size: 0.8em;
+  margin:0;
+}
+#divmap{
+  width: 90%;
+  margin-left:5%;
+  margin-top:5%;
+}
+#framemap{
+  width:100%;
+}
+#descText{
+  text-align:center;
+  max-width: 90%;
+  margin-left:5%;
+}
+
+/* Form Style*/
+#formnmap{
+  display: flex;
+  flex-direction: row;
+  padding-top: 3%;
+}
+.formDiv{
+  width:90%;
+  margin-left:5%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+}
+.form-group{
+  width: 100%;
+  text-align: left;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+  form{
+  width: 80%;
+  margin-left:10%;
+  text-align: center;
+  padding: 0;
+  }
+  label{
+    font-size: 1em;
+    margin-bottom:1%;
+    margin-top:4%;
+  }
+  input{
+    height: 60%;
+    font-size: 1.3em;
+    border-radius: 2px;
+    border:none;
+    padding:3px;
+    box-shadow: 0.5px 0.5px 3px;
+    -webkit-appearance: none;
+
+  }
+#contactFormMessage{
+  min-height: 20vw;
+  max-height: 20vw;
+  border:none;
+  box-shadow: 0.5px 0.5px 3px;
+  -webkit-appearance: none;
+}
+
+.banner1button{
+  padding:0.7em;
+  background-color: rgb(26, 26, 26);
+  color:white;
+  border:none;
+  font-size:0.8em;
+  text-align: center;
+  margin-top:5%;
+  margin-bottom:10%;
+}
+.banner1button:hover {
+  box-shadow: 0 0 0 18px transparent;
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+}
+}

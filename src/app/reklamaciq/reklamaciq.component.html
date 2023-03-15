@@ -1,0 +1,182 @@
+<div id="container">
+  <h2 id="mainTitle">Рекламация </h2>
+  <div id="privacyPolicyContainer">
+    <h2 class="subbTitle">Лесна рекламация </h2>
+    <h2 class="descText">
+      Въпреки, че процентът на дефекти на доставените стоки е нисък, добре е да се знае, че ще
+      решим възможните възникнали такива без забавяне с цел Вашето удовлетворение. В наш
+      интерес е да решим предявената рекламация възможно най-бързо, затова не се
+      притеснявайте, че ще чакате по-дълго от необходимото (обикновено всичко се решава в
+      рамките на няколко дни).
+    </h2>
+    <h2 class="subbTitle">Как да направя рекламация? </h2>
+    <h2 class="descText">
+      В случай, че решите да направите рекламация на стока, изпратете я на адрес:
+    </h2>
+
+    <h2 class="descText">
+      заедно с попълнен формуляр за рекламация, който ще намерите тук.
+      Рекламация на стоката можете да направите и лично в нашите магазини. В случай, че
+      попълвате формуляра без помощта на нашия персонал, не забравяйте да посочите това,
+      което виждате като дефект на стоката или как се проявява дефектът, както и възможен
+      начин на решаване на рекламацията.
+    </h2>
+
+    <h2 class="descText">
+      Ще Ви информираме писмено за хода на рекламацията, най-вече за приемането,
+      обработването или отхвърлянето на рекламацията, по електронната поща или с текстови
+      съобщения. Можем също да се свържем с Вас по телефона.
+    </h2>
+
+    <h2 class="descText">
+      Ние своевременно ще вземем решение по рекламацията. Правилното уреждането на
+      претенцията, включително отстраняването на дефекта, няма да отнеме повече от 30 дни.
+      В противен случай имате право да направите отказ от договора за покупко-продажба. За
+      спазване на този срок, от съществено значение е да осигурите необходимото
+      сътрудничество.
+    </h2>
+
+    <h2 class="subbTitle">В кои случаи мога да направя рекламация?</h2>
+
+    <h2 class="descText">
+      Ние сме отговорни за недостатъци, които се проявяват по стоката при доставка и в течение
+      на следващите 3 месеца. Не носим обаче отговорност за възникнали нови дефекти,
+      особено ако те са причинени от неправилна употреба. При употребявани стоки не носим
+      отговорност за недостатъци, съответстващи на степента на употреба или износване на
+      използвана стока. В случай на стоки с посочен срок на годност, ние отговаряме за това, че
+      стоката ще бъде годна за употреба през целия този период.
+    </h2>
+
+    <h2 class="descText">
+      Моля, имайте предвид, че повишената чувствителност или алергична реакция към
+      доставените стоки не може само по себе си да се счита за дефект. По същия начин,
+      недостатъците по подаръци и други безплатни услуги, които предоставяме в допълнение
+      на Вашата поръчка, не се считат за дефект. Снимките на стоки в нашия електронен
+      магазин са само илюстративни и не представляват обвързващо описание на свойствата на
+      стоките (например опаковката може да се различава поради промяна, направена от
+      производителя).
+    </h2>
+    <!--Second separation-->
+    <h2 class="subbTitle">Какви са моите права при рекламация?</h2>
+
+    <h2 class="descText">
+      <span class="descTextWithSpansLeftSpan">> </span>В случай на дефект по стоката, можем съвместно да договорим компенсация под формата
+      на ваучер
+    </h2>
+
+    <h2 class="descText">
+      <span class="descTextWithSpansLeftSpan">> </span>
+      Освен това, Вие имате право да поискате отстраняване на повредата чрез повторна
+      доставка или ремонт.
+    </h2>
+
+    <h2 class="descText">
+      <span class="descTextWithSpansLeftSpan">> </span>
+      Ако такова отстраняване на дефекта е невъзможно или неоправдано за нас, Вие имате
+      право да поискате отстъпка от покупната цена. В този случай запазвате стоката и ние ще
+      Ви възстановим част от покупната цена.
+    </h2>
+
+    <h2 class="descText">
+      <span class="descTextWithSpansLeftSpan">> </span>
+      Ако се касае за съществен дефект, можете също да направите отказ от договора за
+      покупка. В този случай ни изпратете стоката обратно и ние ще Ви възстановим пълната
+      цена на продукта.
+    </h2>
+
+    <h2 class="subbTitle">Контакти</h2>
+
+    <h2 class="descText">
+      В случай, че имате въпроси относно рекламациите, свържете се с нас на имейл
+      <a class="styledLinks" href = "mailto: 777grimo@gmail.com">777grimo@gmail.com</a> или тел<a class="styledLinks" href="tel:088-270-9580"> +359 876525362.</a>
+    </h2>
+
+    <h2 id="formTitle">Имате ли въпроси? Пишете ни.</h2>
+
+    <div id="formnmap">
+      <div class="formDiv">
+        <form [formGroup]="contactForm" #f='ngForm' novalidate>
+          <div class="form-group">
+            <label for="name">Вашето Име</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+             class="form-control"
+             id="contactFormName"
+              formControlName="contactFormName"
+               [(ngModel)]="itemName"
+                required>
+
+                <div *ngIf="contactForm.controls['contactFormName'].invalid && (contactForm.controls['contactFormName'].dirty || contactForm.controls['contactFormName'].touched)" class="alert alert-danger">
+                  <div *ngIf="contactForm.controls['contactFormName'].errors.required" style="color:red; padding-top:0.5%;">
+                  *Name is required.
+                </div>
+              </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="alterEgo">Email</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormEmail"
+            formControlName="contactFormEmail"
+            [(ngModel)]="itemEmail"
+
+            >
+            <div *ngIf="contactForm.controls['contactFormEmail'].invalid && (contactForm.controls['contactFormEmail'].dirty || contactForm.controls['contactFormEmail'].touched)" class="alert alert-danger">
+              <div *ngIf="contactForm.controls['contactFormEmail'].errors.required" style="color:red; padding-top:0.5%;">
+              *Email is required.
+            </div>
+            <div *ngIf="contactForm.controls['contactFormEmail'].errors.email" style="color:red; padding-top:0.5%;">
+              *Email addres is not correct.
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="alterEgo">Телефон</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormPhone"
+            formControlName="contactFormPhone"
+            [(ngModel)]="itemPhone">
+            <div *ngIf="contactForm.controls['contactFormPhone'].invalid && (contactForm.controls['contactFormPhone'].dirty || contactForm.controls['contactFormPhone'].touched)" class="alert alert-danger">
+              <div *ngIf="contactForm.controls['contactFormPhone'].errors.required" style="color:red; padding-top:0.5%;">
+              *Phone is required.
+            </div>
+            <div *ngIf="contactForm.controls['contactFormPhone'].errors.pattern" style="color:red; padding-top:0.5%;">
+              *Phone is not correct.
+            </div>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Номер на поръчка</label>
+            <input type="text"
+             class="form-control"
+             id="contactFormOrderNumber"
+              formControlName="contactFormOrderNumber"
+               [(ngModel)]="itemOrderNumber"
+              >
+
+          </div>
+
+          <div class="form-group">
+            <label for="alterEgo">Съобщение</label>
+            <textarea type="textarea"
+            class="form-control"
+            id="contactFormMessage"
+            formControlName="contactFormMessage"
+            [(ngModel)]="itemMessage">
+          </textarea>
+          </div>
+          <div class="buttoncenter">
+            <button type="submit" class="banner1button"  (click)=onSubmit() (click)=clearForm() [disabled]="!f.valid" >Изпрати</button>
+          </div>
+        </form>
+      </div>
+      </div>
+</div>
+</div>
+
+

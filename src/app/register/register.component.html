@@ -1,0 +1,37 @@
+<div id="container">
+  <h2 id="mainTitle">Регистрация</h2>
+   <!--Form-->
+   <div id="centerForm">
+   <div id="formnmap">
+    <div class="formDiv">
+      <form >
+        <div class="form-group">
+          <label for="name">E-mail</label>
+          <input type="text" class="input" #emailText>
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Парола</label>
+          <input type="text" class="input"  [type]="hide ? 'password' : 'text'"    #passwordText required>
+          <div id="hideIcon" (click)="hide = !hide"><fa-icon id="faiconsHeart" [icon]="faEyeSlash"></fa-icon></div>
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Потвърди парола</label>
+          <input type="text" class="input"  [type]="hide ? 'password' : 'text'"    #confirmPasswordText required>
+          <div id="hideIcon" (click)="hide = !hide"><fa-icon id="faiconsHeart" [icon]="faEyeSlash"></fa-icon></div>
+        </div>
+
+        <div class="buttoncenter">
+          <button type="submit" class="banner1button"  (click)="mailAndPassword(emailText.value, passwordText.value, confirmPasswordText.value)" >Регистрация</button>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+  <h2 id="moreText">
+    <span id="moreTextLeft">Вече имате акаунт?</span>
+    <span id="moreTextRight"><a id = "link" [routerLink]="['/login']">Вход</a></span>
+  </h2>
+</div>
+

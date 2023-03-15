@@ -1,0 +1,1780 @@
+<div id="container">
+  <mat-drawer-container class="example-container">
+    <mat-drawer id="matDrawerStyle" #drawer >
+      <div id="drawerContent">
+        <div id="menuInnerStyle">
+          <div id="menuInnerOpenedStyleFirstColOne">
+            <h2 id="headerMenu">Меню</h2>
+          </div>
+
+          <div id="menuInnerOpenedStyleSecondColOne">
+            <fa-icon id="faiconsTimesMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+          </div>
+        </div>
+        <hr id="hrUnderMenuShowWhenMenuHidden">
+
+
+        <!--Promos-->
+        <div class="drawerItems" (click)="openHiddenMenuInnerCategoriesPromotions()">
+            <div class="navButtonContentLeftInner">
+              <h2 class="navButtonContentTitle">Промоции</h2>
+            </div>
+            <div class="navButtonContentRightInner">
+              <fa-icon class="faiconsTimesMenuNavButton" [icon]="faAngleRight"></fa-icon>
+            </div>
+        </div>
+
+      <div class="showhiddenMenuInnerCattegories" *ngIf= "underrCategoryMenuPromotionsClicked">
+        <div>
+          <div class="menuInnerStyleHidden">
+            <div class="menuInnerStyleHiddenFirstCol">
+              <fa-icon class="faiconsLeftArrow" (click)="openHiddenMenuInnerCategoriesPromotions()" [icon]="faChevronLeft"></fa-icon>
+            </div>
+
+            <div class="menuInnerStyleHiddenSecondCol">
+              <h2 class="headerMenuHidden">Промоции</h2>
+            </div>
+
+            <div class="menuInnerStyleHiddenThirdCol">
+              <fa-icon class="faiconsTimesHiddenMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+            </div>
+          </div>
+
+        <hr id="hrUnderMenuShowWhenMenuHidden">
+
+        <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+          <div class="DivAsAButton">
+            <h2 class="titleDivAsButton">Парфюми на промоция</h2>
+          </div>
+        </a>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+              <h2 class="titleDivAsButton">Козметика на промоция</h2>
+            </div>
+          </a>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+              <h2 class="titleDivAsButton">Парфюми на разпродажба</h2>
+            </div>
+          </a>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+              <h2 class="titleDivAsButton">Козметика на разпродажба</h2>
+            </div>
+          </a>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+              <h2 class="titleDivAsButton">Подаръци и промоции</h2>
+            </div>
+          </a>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+              <h2 class="titleDivAsButton">Безплатна доставка</h2>
+            </div>
+          </a>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+              <h2 class="titleDivAsButton">Ваучери за подарък</h2>
+            </div>
+          </a>
+
+
+      </div>
+      </div>
+
+        <hr id="hrUnderMenu">
+        <!--Perfumes-->
+        <div class="drawerItems" (click)="openHiddenMenuInnerCategories()">
+          <div class="navButtonContentLeftInner">
+            <h2 class="navButtonContentTitle">Парфюми</h2>
+          </div>
+          <div class="navButtonContentRightInner">
+            <fa-icon class="faiconsTimesMenuNavButton" [icon]="faAngleRight"></fa-icon>
+          </div>
+        </div>
+
+
+        <div class="showhiddenMenuInnerCattegories" *ngIf= "underrCategoryMenuClicked">
+          <div>
+          <div class="menuInnerStyleHidden">
+            <div class="menuInnerStyleHiddenFirstCol">
+              <fa-icon class="faiconsLeftArrow" (click)="openHiddenMenuInnerCategories()" [icon]="faChevronLeft"></fa-icon>
+            </div>
+
+            <div class="menuInnerStyleHiddenSecondCol">
+              <h2 class="headerMenuHidden">Парфюми</h2>
+            </div>
+
+            <div class="menuInnerStyleHiddenThirdCol">
+              <fa-icon class="faiconsTimesHiddenMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+            </div>
+          </div>
+          <hr id="hrUnderMenuShowWhenMenuHidden">
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Покажи всички</h2>
+            </div>
+          </a>
+
+          <mat-accordion>
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">Промоции, намаления и нови продукти</h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Промоции</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Разпродажба</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ново</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Най-продавани</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ваучери за подарък</a>
+
+              </div>
+            </mat-expansion-panel>
+
+            <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+              <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Le Parfum</h2>
+              </div>
+            </a>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">Дамски парфюми</h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Парфюмни води</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Тоалетни води</a>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton"> Мъжки парфюми</h2>
+                </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Парфюмни води</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Тоалетни води</a>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">Унисекс</h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Парфюмни води</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Тоалетни води</a>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">Парфюмна козметика</h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Грижа за тялото</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Дезодоранти и антперстиранти</a>
+              </div>
+            </mat-expansion-panel>
+
+            <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+              <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Подаръчни и всекидневни комплекти</h2>
+              </div>
+            </a>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton">Марки</h2>
+              </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Paco Rabanne</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Christian Dior</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Le Parfum</a>
+              </div>
+              </mat-expansion-panel>
+
+          </mat-accordion>
+        </div>
+        </div>
+        <hr id="hrUnderMenu">
+        <!--MakeUp-->
+        <div class="drawerItems" (click)="openHiddenMenuInnerCategoriesMakeUp()">
+          <div class="navButtonContentLeftInner">
+            <h2 class="navButtonContentTitle">Грим</h2>
+          </div>
+          <div class="navButtonContentRightInner">
+            <fa-icon class="faiconsTimesMenuNavButton" [icon]="faAngleRight"></fa-icon>
+          </div>
+        </div>
+
+
+      <div class="showhiddenMenuInnerCattegoriesMakeUp" *ngIf= "underrCategoryMenuMakeUpClicked">
+        <div>
+        <div class="menuInnerStyleHidden">
+          <div class="menuInnerStyleHiddenFirstCol">
+            <fa-icon class="faiconsLeftArrow" (click)="openHiddenMenuInnerCategoriesMakeUp()" [icon]="faChevronLeft"></fa-icon>
+          </div>
+
+          <div class="menuInnerStyleHiddenSecondCol">
+            <h2 class="headerMenuHidden">Грим</h2>
+          </div>
+
+          <div class="menuInnerStyleHiddenThirdCol">
+            <fa-icon class="faiconsTimesHiddenMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+          </div>
+        </div>
+        <hr id="hrUnderMenuShowWhenMenuHidden">
+
+        <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+          <div class="DivAsAButton">
+            <h2 class="titleDivAsButton">Покажи всички</h2>
+          </div>
+        </a>
+        <mat-accordion>
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton"> Промоции, намаления и нови продукти </h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Промоции</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Разпродажба</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ново</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Най-продавани</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ваучери за подарък</a>
+
+              </div>
+            </mat-expansion-panel>
+
+          <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Лице </h2>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Фон дьо тен</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Коректори</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Пудри</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Основи</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >ВВ и СС кремове</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Бронзати</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ружове и хайлайтъри</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Четки и гъби</a>
+
+            </div>
+          </mat-expansion-panel>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Палитри</h2>
+            </div>
+          </a>
+
+          <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton">Очи</h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Спирали</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Сенки за очи</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Очна линия</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Молив за очи</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Изкуствени мигли</a>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Вежди </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Моливи за вежди</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Бои за вежди</a>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Устни </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Червила</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Гланцове за устни</a>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Нокти </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Лакове за нокти</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Грижа да нокти</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Маникюр и пили за нокти</a>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Аксесоари </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Козметични чанти</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Грижа да нокти</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Маникюр и пили за нокти</a>
+            </div>
+          </mat-expansion-panel>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Козметични комлекти</h2>
+            </div>
+          </a>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Марки </h2>
+              </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Lancone</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Estee Lauder</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >NYX</a>
+              </div>
+              </mat-expansion-panel>
+
+        </mat-accordion>
+      </div>
+      </div>
+      <hr id="hrUnderMenu">
+        <!--Hair-->
+        <div class="drawerItems" (click)="openHiddenMenuInnerCategoriesHair()">
+          <div class="navButtonContentLeftInner">
+            <h2 class="navButtonContentTitle">Коса</h2>
+          </div>
+          <div class="navButtonContentRightInner">
+            <fa-icon class="faiconsTimesMenuNavButton" [icon]="faAngleRight"></fa-icon>
+          </div>
+        </div>
+
+
+      <div class="showhiddenMenuInnerCattegoriesHair" *ngIf= "underrCategoryMenuHairClicked">
+        <div>
+        <div class="menuInnerStyleHidden">
+          <div class="menuInnerStyleHiddenFirstCol">
+            <fa-icon class="faiconsLeftArrow" (click)="openHiddenMenuInnerCategoriesHair()" [icon]="faChevronLeft"></fa-icon>
+          </div>
+
+          <div class="menuInnerStyleHiddenSecondCol">
+            <h2 class="headerMenuHidden">Коса</h2>
+          </div>
+
+          <div class="menuInnerStyleHiddenThirdCol">
+            <fa-icon class="faiconsTimesHiddenMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+          </div>
+        </div>
+        <hr id="hrUnderMenuShowWhenMenuHidden">
+        <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+          <div class="DivAsAButton">
+              <h2 class="titleDivAsButton">Покажи всички</h2>
+          </div>
+        </a>
+        <mat-accordion>
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton"> Промоции, намаления и нови продукти </h2>
+            </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Промоции</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Разпродажба</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ново</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Най-продавани</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ваучери за подарък</a>
+
+            </div>
+            </mat-expansion-panel>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Грижа за коса </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Шампоани</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Балсами</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Маски за коса</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Масла за коса</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Грижа биз отмиване</a>
+
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Стайлинг </h2>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Лакове за коса</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Пяна за коса</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Спрейове за обем</a>
+            </div>
+          </mat-expansion-panel>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Бои за коса</h2>
+            </div>
+          </a>
+
+          <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Терапия за коса </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Мазна коса</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Косопад</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Подпомагане растеж на косата</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Увредена коса</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Против пърхот</a>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Гребени и четки </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Гребени</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Плоски четки</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Кръгли четки</a>
+
+            </div>
+          </mat-expansion-panel>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Как да се грижим за косата си?</h2>
+            </div>
+          </a>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton">  Марки </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >L'Oreal Professional</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Schwarzkop Professional</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Wella</a>
+            </div>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </div>
+      </div>
+      <hr id="hrUnderMenu">
+      <!--Face-->
+      <div class="drawerItems" (click)="openHiddenMenuInnerCategoriesFace()">
+        <div class="navButtonContentLeftInner">
+          <h2 class="navButtonContentTitle">Лице</h2>
+        </div>
+        <div class="navButtonContentRightInner">
+          <fa-icon class="faiconsTimesMenuNavButton" [icon]="faAngleRight"></fa-icon>
+        </div>
+      </div>
+
+
+    <div class="showhiddenMenuInnerCattegoriesFace" *ngIf= "underrCategoryMenuFaceClicked">
+      <div>
+      <div class="menuInnerStyleHidden">
+        <div class="menuInnerStyleHiddenFirstCol">
+          <fa-icon class="faiconsLeftArrow" (click)="openHiddenMenuInnerCategoriesFace()" [icon]="faChevronLeft"></fa-icon>
+        </div>
+
+        <div class="menuInnerStyleHiddenSecondCol">
+          <h2 class="headerMenuHidden">Лице</h2>
+        </div>
+
+        <div class="menuInnerStyleHiddenThirdCol">
+          <fa-icon class="faiconsTimesHiddenMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+        </div>
+      </div>
+      <hr id="hrUnderMenuShowWhenMenuHidden">
+      <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+        <div class="DivAsAButton">
+            <h2 class="titleDivAsButton">Покажи всички</h2>
+        </div>
+      </a>
+      <mat-accordion>
+        <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton"> Промоции, намаления и нови продукти </h2>
+            </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Промоции</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Разпродажба</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ново</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Най-продавани</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ваучери за подарък</a>
+
+            </div>
+            </mat-expansion-panel>
+
+        <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton"> Грижа за лице </h2>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Маски за лице</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Масла за лице</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Пилинг за лице</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Серуми за лице</a>
+
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton">  Кремове за лице </h2>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Дневни Кремове</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Нощни Кремове</a>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton">  Грижа за околоочната зона </h2>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Кремове за околоочната зона</a>
+
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton"> Премахване на грим и почестване на лице </h2>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Мицеларни води</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Премахване на грим от лицето</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Почиставне на лицето</a>
+          </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton"> Бръснене за мъже </h2>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Продукти за бръснене</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Продукти за след бръснене</a>
+
+          </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton"> Слънце </h2>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Слънцезащитни кремове за лице</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Автобронзанти за лице</a>
+
+          </div>
+          </mat-expansion-panel>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Козметични комплекти</h2>
+            </div>
+          </a>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Как да се грижим за лицето си?</h2>
+            </div>
+          </a>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h2 class="titleDivAsButton"> Марки </h2>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="showExpansionPannelItemsInComlumn">
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Guerlain</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Estee Lauder</a>
+            <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Lancome</a>
+
+          </div>
+          </mat-expansion-panel>
+
+      </mat-accordion>
+    </div>
+    </div>
+    <hr id="hrUnderMenu">
+
+        <!--Body-->
+        <div class="drawerItems" (click)="openHiddenMenuInnerCategoriesBody()">
+          <div class="navButtonContentLeftInner">
+            <h2 class="navButtonContentTitle">Тяло</h2>
+          </div>
+          <div class="navButtonContentRightInner">
+            <fa-icon class="faiconsTimesMenuNavButton" [icon]="faAngleRight"></fa-icon>
+          </div>
+        </div>
+
+
+      <div class="showhiddenMenuInnerCattegoriesBody" *ngIf= "underrCategoryMenuBodyClicked">
+        <div>
+        <div class="menuInnerStyleHidden">
+          <div class="menuInnerStyleHiddenFirstCol">
+            <fa-icon class="faiconsLeftArrow" (click)="openHiddenMenuInnerCategoriesBody()" [icon]="faChevronLeft"></fa-icon>
+          </div>
+
+          <div class="menuInnerStyleHiddenSecondCol">
+            <h2 class="headerMenuHidden">Тяло</h2>
+          </div>
+
+          <div class="menuInnerStyleHiddenThirdCol">
+            <fa-icon class="faiconsTimesHiddenMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+          </div>
+        </div>
+        <hr id="hrUnderMenuShowWhenMenuHidden">
+        <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+          <div class="DivAsAButton">
+              <h2 class="titleDivAsButton">Покажи всички</h2>
+          </div>
+        </a>
+        <mat-accordion>
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Промоции, намаления и нови продукти </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Промоции</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Разпродажба</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ново</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Най-продавани</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ваучери за подарък</a>
+            </div>
+            </mat-expansion-panel>
+
+          <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton">  Грижа за тялото </h2>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Кремове за тяло</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Кремове за ръце</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Млека за тяло</a>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Сапуни </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Твърди сапуни</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Течни сапуни</a>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton"> Душ </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Душ гелове</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Шампоани</a>
+            </div>
+          </mat-expansion-panel>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Дезодоранти и антперстиранти</h2>
+            </div>
+          </a>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton">  Слънце </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Слънцезащитни кремове</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Автобронзанти</a>
+            </div>
+          </mat-expansion-panel>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Козметични комплекти</h2>
+            </div>
+          </a>
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Как да се грижим за тялото си?</h2>
+            </div>
+          </a>
+
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="titleDivAsButton">  Марки </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showExpansionPannelItemsInComlumn">
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Nivea</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Dove</a>
+              <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Bioderma</a>
+            </div>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </div>
+      </div>
+      <hr id="hrUnderMenu">
+
+          <!--Men-->
+          <div class="drawerItems" (click)="openHiddenMenuInnerCategoriesMen()">
+            <div class="navButtonContentLeftInner">
+              <h2 class="navButtonContentTitle">Мъже</h2>
+            </div>
+            <div class="navButtonContentRightInner">
+              <fa-icon class="faiconsTimesMenuNavButton" [icon]="faAngleRight"></fa-icon>
+            </div>
+          </div>
+
+
+
+        <div class="showhiddenMenuInnerCattegoriesMen" *ngIf= "underrCategoryMenuMenClicked">
+          <div>
+          <div class="menuInnerStyleHidden">
+            <div class="menuInnerStyleHiddenFirstCol">
+              <fa-icon class="faiconsLeftArrow" (click)="openHiddenMenuInnerCategoriesMen()" [icon]="faChevronLeft"></fa-icon>
+            </div>
+
+            <div class="menuInnerStyleHiddenSecondCol">
+              <h2 class="headerMenuHidden">Мъже</h2>
+            </div>
+
+            <div class="menuInnerStyleHiddenThirdCol">
+              <fa-icon class="faiconsTimesHiddenMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+            </div>
+          </div>
+          <hr id="hrUnderMenuShowWhenMenuHidden">
+
+          <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+            <div class="DivAsAButton">
+                <h2 class="titleDivAsButton">Покажи всички</h2>
+            </div>
+          </a>
+          <mat-accordion>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton"> Промоции, намаления и нови продукти </h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Промоции</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Разпродажба</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ново</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Най-продавани</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ваучери за подарък</a>
+              </div>
+              </mat-expansion-panel>
+
+            <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">  Мъжки парфюми </h2>
+                </mat-panel-title>
+
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Парфюмни води</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Тоалетни води</a>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="secExpPanel" class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">  Грижа за брада </h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Масла</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Балсами и восъце</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Сапуни и шампоани</a>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">  Бръснене </h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Продукти за бръснене</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Продукти за след бръснене</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Резервни ножчета</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Самобръсначки</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Афтършейвове</a>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton"> Тяло </h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Дезодоранти и антперстиранти</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Продукти за ланя</a>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton"> Коса </h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Покажи всички</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Шампоани</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Стилизиране</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Косопад при мъжете</a>
+              </div>
+            </mat-expansion-panel>
+
+            <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+              <div class="DivAsAButton">
+                  <h2 class="titleDivAsButton">Козметични комплекти</h2>
+              </div>
+            </a>
+
+            <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+                                (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">  Марки</h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Nivea</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Gillete</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Aplecin</a>
+              </div>
+            </mat-expansion-panel>
+
+          </mat-accordion>
+        </div>
+        </div>
+        <hr id="hrUnderMenu">
+
+        <!--Other-->
+        <div class="drawerItems" (click)="openHiddenMenuInnerCategoriesOther()">
+          <div class="navButtonContentLeftInner">
+            <h2 class="navButtonContentTitle">Други</h2>
+          </div>
+          <div class="navButtonContentRightInner">
+            <fa-icon class="faiconsTimesMenuNavButton" [icon]="faAngleRight"></fa-icon>
+          </div>
+        </div>
+
+
+      <div class="showhiddenMenuInnerCattegoriesOther" *ngIf= "underrCategoryMenuOtherClicked">
+        <div>
+        <div class="menuInnerStyleHidden">
+          <div class="menuInnerStyleHiddenFirstCol">
+            <fa-icon class="faiconsLeftArrow" (click)="openHiddenMenuInnerCategoriesOther()" [icon]="faChevronLeft"></fa-icon>
+          </div>
+
+          <div class="menuInnerStyleHiddenSecondCol">
+            <h2 class="headerMenuHidden">Други</h2>
+          </div>
+
+          <div class="menuInnerStyleHiddenThirdCol">
+            <fa-icon class="faiconsTimesHiddenMenu"(click)="drawer.toggle()" [icon]="faTimes"></fa-icon>
+          </div>
+        </div>
+        <hr id="hrUnderMenuShowWhenMenuHidden">
+        <mat-accordion>
+          <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h2 class="titleDivAsButton">Промоции, намаления и нови продукти</h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="showExpansionPannelItemsInComlumn">
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Промоции</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Разпродажба</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ново</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Най-продавани</a>
+                <a  class = "innerMenuLink" [routerLink]="['products']" (click)="drawer.toggle(); openHiddenMenuInnerCategories()" >Ваучери за подарък</a>
+              </div>
+              </mat-expansion-panel>
+
+              <a  class = "divAsButtonLink" [routerLink]="['products']" (click)="drawer.toggle()" >
+                <div class="DivAsAButton">
+                  <h2 class="titleDivAsButton">Ароматизатори за кола</h2>
+                </div>
+              </a>
+
+        </mat-accordion>
+      </div>
+      </div>
+      <hr id="hrUnderMenu">
+
+        <a  id = "link" [routerLink]="['aboutus']" (click)="drawer.toggle()" >
+          <button id="drawerItems">
+            <h2 id="navButtonContentTitle" id="transport">Транспорт</h2>
+          </button>
+        </a>
+        <hr id="hrUnderMenu">
+      </div>
+
+    </mat-drawer>
+    <mat-drawer-content >
+  <!--Navigation Bar Phones-->
+  <div id="navbar">
+    <div class="oneFourth">
+      <fa-icon id="faiconsLeft"(click)="drawer.toggle()" [icon]="faBars"></fa-icon>
+      <a  class = "link2" [routerLink]="['wishlist']" ><fa-icon id="faicons" [icon]="faHeart"></fa-icon></a>
+    </div>
+    <div id="logoDiv">
+      <a  class = "link2" [routerLink]="['home']" >  <img id="logo" src="../assets/logo.png"></a>
+    </div>
+    <div class="oneFourth">
+      <div id="navbarPhonesColIconContainerLeft">
+        <a  class = "link2" [routerLink]="['account']" ><fa-icon id="faiconsRight" [icon]="faUser"></fa-icon></a>
+      </div>
+
+      <div id="navbarPhonesColIconContainerRight">
+        <a  class = "link2" id="linkcart" [routerLink]="['cart']" ><img id="bag" src="../assets/bag1.png"></a>
+      </div>
+    </div>
+  </div>
+  <!--Search Banner Mobile-->
+
+  <div class="searchContent" (scroll)="scrolling($event)"  [ngClass]="{'searchContentScrolled': scrollmobile}" >
+
+      <div id="searchBarSpacer"></div>
+      <input type="text" id="inputFieldSearchBar">
+      <button id="searchBarButtonMobile">
+        <fa-icon id="searchIconCenter" [icon]="faSearch"></fa-icon>
+      </button>
+
+  </div>
+  <!--Advertisment Banner Mobile-->
+  <div class="advertismentBanner" (scroll)="scrolling($event)"  [ngClass]="{'advertismentBannerDisplayNone': showAdvertismentBanner}">
+    <img id="advertisemntdImg" src="../assets/prod.jpg">
+    <div id="advetrismentText">
+      <h2 id="advertismentTopHeader">10% НАМАЛЕНИЕ НА ЛУКСОЗНИ МАРКИ</h2>
+      <h2 id="advertismentBottomHeader">С КОДА GRIMO10</h2>
+    </div>
+  </div>
+  <!--DESKTOP NAVIGATION BAR STYLES START HERE-->
+  <div id="navBarDesktop">
+
+    <div class="navBarDesktopRow" (mouseover)="hiddeDesktopMenuHoover()">
+
+      <div id="navBarDesktopLogo">
+        <a  class = "link2" [routerLink]="['home']" > <img id="navBarDesktopLogoImg" src="../assets/logo.png"></a>
+      </div>
+
+      <div id="navBarDesktopSearchBar">
+        <form id="formDiv" class="example-form-field">
+          <input matInput id="searchInput" type="text" placeholder="Продукти, марки..." >
+        </form>
+        <button id="searchDiv">
+          <fa-icon id="faiconSearch" [icon]="faSearch"></fa-icon>
+        </button>
+      </div>
+
+      <div id="navBarDesktopButtons">
+        <a  class = "link2" [routerLink]="['account']" ><fa-icon id="faiconsRight" [icon]="faUser"></fa-icon></a>
+        <a  class = "link2" [routerLink]="['wishlist']" ><fa-icon id="faicons" [icon]="faHeart"></fa-icon></a>
+        <a  class = "link2" id="linkcart" [routerLink]="['cart']" ><img id="bag" src="../assets/bag1.png"></a>
+      </div>
+    </div>
+
+    <!--SECOND ROW CONTAINING CATEGORIES NAMES-->
+    <div class="navBarDesktopRow">
+
+      <div id="navBarDesktopDivAsButton" (mouseover)="showHiddenDesktopMenuPromoHoover()">
+        <h2 id="navBarDesktopHeaders">ПРОМОЦИИ</h2>
+      </div>
+
+      <div class="navBarDesktopDivAsButton" (mouseover)="showHiddenDesktopMenuHoover()">
+        <h2 class="navBarDesktopHeaders">Парфюми</h2>
+      </div>
+
+      <div class="navBarDesktopDivAsButton" (mouseover)="showHiddenDesktopMenuGrimHoover()">
+        <h2 class="navBarDesktopHeaders">Грим</h2>
+      </div>
+
+      <div class="navBarDesktopDivAsButton" (mouseover)="showHiddenDesktopMenuHairHoover()">
+        <h2 class="navBarDesktopHeaders">Коса</h2>
+      </div>
+
+      <div class="navBarDesktopDivAsButton" (mouseover)="showHiddenDesktopMenuFaceHoover()">
+        <h2 class="navBarDesktopHeaders">Лице</h2>
+      </div>
+
+      <div class="navBarDesktopDivAsButton" (mouseover)="showHiddenDesktopMenuBodyHoover()">
+        <h2 class="navBarDesktopHeaders">Тяло</h2>
+      </div>
+
+      <div class="navBarDesktopDivAsButton" (mouseover)="showHiddenDesktopMenuMenHoover()">
+        <h2 class="navBarDesktopHeaders">Мъже</h2>
+      </div>
+
+      <div class="navBarDesktopDivAsButton" (mouseover)="showHiddenDesktopMenuOtherHoover()">
+        <h2 class="navBarDesktopHeaders">Други</h2>
+      </div>
+    </div>
+    <!--MENU FOR PROMOTIONS DESKTOP-->
+    <div id="navBarDesktopContainerPerfumes" *ngIf="hiddenMenuDesktopPromo" >
+      <div id="navBarDesktopInnerContainerPerfumes">
+
+        <div class="navBarDesktopInnerContainerFirstColl">
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuPromo()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Промоции и нови продукти</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuPromo()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuPromo()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuPromo()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuPromo()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuPromo()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+        </div>
+
+
+
+      </div>
+    </div>
+    <!--MENU FOR PERFUMES DESKTOP-->
+    <div id="navBarDesktopContainerPerfumes" *ngIf="hiddenMenuDesktop" >
+    <div id="navBarDesktopInnerContainerPerfumes">
+
+      <div class="navBarDesktopInnerContainerFirstColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Промоции и нови продукти</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Мъжки Парфюми</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Парфюмни води</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Тоалетни води</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Le Parfum</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Дамски Парфюми</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Парфюмни води</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()">  <h2 class="navBarDesktopSubCategorriesSubHeaders">Тоалетни води</h2></a>
+        </div>
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Унисекс</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Парфюмни води</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Тоалетни води</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Парфюмна козметика</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Грижа за тялого</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Дезодоранти и антперстиранти</h2></a>
+        </div>
+
+
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Марки</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Paco Rabane</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Christian Dior</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenu()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Подаръчни и всекидневни комплекти</h2></a>
+      </div>
+
+    </div>
+  </div>
+  <!--MENU FOR MAKE UP-->
+    <div id="navBarDesktopContainerGrim" *ngIf="hiddenMenuDesktopGrim" >
+    <div id="navBarDesktopInnerContainerPerfumes">
+
+      <div class="navBarDesktopInnerContainerFirstColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Промоции и нови продукти</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Лице</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Фон дьо тен</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Коректори</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Пудри</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Основи</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">ВВ и СС кремове</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Бронзанти</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ружове и хайлайтъри</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Четки и гъби</h2></a>
+        </div>
+
+
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Очи</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Спирали</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Сенки за очи</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Очна линия</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Моливи за очи</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Изкуствени мигли</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Палитри</h2></a>
+        </div>
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Вежди</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Моливи за вежди</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Бои за вежди</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Устни</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Червила</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Гланцове за устни</h2></a>
+        </div>
+
+
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Марки</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Lancome</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Estee Lauder</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesSubHeaders">NYX</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="showHiddenDesktopMenuGrim()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Козметични комплекти</h2></a>
+      </div>
+
+    </div>
+  </div>
+  <!--MENU FOR HAIR-->
+  <div id="navBarDesktopContainerPerfumes" *ngIf="hiddenMenuDesktopHair" >
+    <div id="navBarDesktopInnerContainerPerfumes">
+
+      <div class="navBarDesktopInnerContainerFirstColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Промоции и нови продукти</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Грижа за коса</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Шампоани</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Балсами</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Маски за коса</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Масла за коса</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Грижа без отмиване</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Бои за коса</h2></a>
+        </div>
+
+
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Терапия за коса</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Мазна коса</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Косопад</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Подпомагане растеж на косата</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Увредена коса</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Против пърхот</h2></a>
+        </div>
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Стайлинг</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Лакове за коса</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()">  <h2 class="navBarDesktopSubCategorriesSubHeaders">Пяна за коса</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()">  <h2 class="navBarDesktopSubCategorriesSubHeaders">Спрейове за обем</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Гребени и четки</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Плоски четки</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Кръгли четки</h2></a>
+        </div>
+
+      </div>
+
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Марки</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHairHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Подаръчни и всекидневни комплекти</h2></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!--MENU FOR FACE-->
+  <div id="navBarDesktopContainerPerfumes" *ngIf="hiddenMenuDesktopFace" >
+    <div id="navBarDesktopInnerContainerPerfumes">
+
+      <div class="navBarDesktopInnerContainerFirstColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Промоции и нови продукти</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Грижа за лице</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Маски за лице</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Масла за лице</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Пилинг за лице</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Серум за лице</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Козметични комплекти</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Кремове за лице</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Дневни кремове</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()">  <h2 class="navBarDesktopSubCategorriesSubHeaders">Нощни кремове</h2></a>
+        </div>
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Премахване на грим и почистване на лице</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Мицеларни води</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Премахване на грим от лицето</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Почистване на лицето</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Грижа за околоочната зона</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Кремове за околоочната зона</h2></a>
+        </div>
+
+
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Бръснене за мъже</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Продукти за бръснене</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Продукти за след бръснене</h2></a>
+
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Как да се грижим за лицето си</h2></a>
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Марки</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Guerlain</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Estee Lauder</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Lancome</h2></a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--MENU FOR BODY-->
+  <div id="navBarDesktopContainerPerfumes" *ngIf="hiddenMenuDesktopBody" >
+    <div id="navBarDesktopInnerContainerPerfumes">
+
+      <div class="navBarDesktopInnerContainerFirstColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Промоции и нови продукти</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Грижа за тялото</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи вкички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Кремове за тяло</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Кремове за ръце</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Млека за тяло</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Дезодоранти и антпирстиранти</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Сапуни</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Твърди сапуни</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()">  <h2 class="navBarDesktopSubCategorriesSubHeaders">Течни сапуни</h2></a>
+        </div>
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Душ</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Душ гелове</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Шампоани</h2></a>
+        </div>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Козметични комплекти</h2></a>
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Как да се грижим за тялото си?</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Марки</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Guerlain</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Estee Lauder</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Lancome</h2></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!--MENU FOR MEN-->
+  <div id="navBarDesktopContainerPerfumes" *ngIf="hiddenMenuDesktopMen" >
+    <div id="navBarDesktopInnerContainerPerfumes">
+
+      <div class="navBarDesktopInnerContainerFirstColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Промоции и нови продукти</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Мъжки парфюми</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи вкички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Парфюмни води</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Тоалетни води</h2></a>
+        </div>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Козметични комплекти</h2></a>
+
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Бръснене</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Продукти за бръснене</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Продукти за след бръснене</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Резервни ножчета</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Самобръсначки</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Афтършейвове</h2></a>
+        </div>
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesMainHeaders">Грижа за брада</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Масла</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()">  <h2 class="navBarDesktopSubCategorriesSubHeaders">Балсами и восъци</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()">  <h2 class="navBarDesktopSubCategorriesSubHeaders">Сапуни и шампоани</h2></a>
+        </div>
+
+        <div>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Тяло</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Дезодоранти  иантпестиранти</h2></a>
+          <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Продукти за баня</h2></a>
+        </div>
+
+      </div>
+
+      <div class="navBarDesktopInnerContainerSecondColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Коса</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Покажи всички</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Шампоани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Стилизиране</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Косопад при мъжете</h2></a>
+
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Марки</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Nivea</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Gillete</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Aplecin</h2></a>
+      </div>
+
+    </div>
+  </div>
+    <!--MENU FOR OTHER-->
+  <div id="navBarDesktopContainerPerfumes" *ngIf="hiddenMenuDesktopOther" >
+    <div id="navBarDesktopInnerContainerPerfumes">
+
+      <div class="navBarDesktopInnerContainerFirstColl">
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Промоции и нови продукти</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Промоции</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Разпродажба</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Ново</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesSubHeaders">Най-продавани</h2></a>
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"> <h2 class="navBarDesktopSubCategorriesSubHeaders">Ваучери за подарък</h2></a>
+
+        <a  class = "innerMenuLink" [routerLink]="['products']" (click)="hiddeDesktopMenuHoover()"><h2 class="navBarDesktopSubCategorriesMainHeaders">Ароматизатори за кола</h2></a>
+      </div>
+
+
+    </div>
+    </div>
+
+  </div>
+
+  <div (mouseover)="hiddeDesktopMenuHoover()">
+  <router-outlet ></router-outlet>
+  </div>
+  <!--FOOTER DESKTOP STYLES-->
+  <div id="footerDesktop" (mouseover)="hiddeDesktopMenuHoover()">
+    <div id="footerDesktopContainer">
+      <div id="footerDesktopFirstRow">
+        <h2 id="phoneNumberText">+359 24 928311</h2>
+        <div id="nameAndContactRow">
+          <span id="leftnameAndContactRow">info@grimo.bg</span>
+          <span>|</span>
+          <span id="rightnameAndContactRow">Данни за контакт</span>
+        </div>
+      </div>
+
+      <hr class="hrFooter">
+
+      <div class="footerDesktopRow">
+        <h2 class="footerDesktopMainHeader">Регистрирайте се сега, за да получавате всички оферти и талони по имейл.</h2>
+        <div id="seacbBarAndButtons">
+          <form id="formbulettinRegister" class="example-form-field">
+            <input matInput id="bulettinRegisterField" type="text" placeholder="Въведете вашия email..." >
+          </form>
+
+          <div id="footerButtons">
+            <div id="innerDivFooterButtonsLeft">
+              <button class="banner1button"  >ЖЕНА</button>
+            </div>
+            <div id="innerDivFooterButtonsRight">
+              <button  class="banner1button">МЪЖ</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="hrFooter">
+
+      <div class="footerDesktopRow">
+        <h2 class="footerDesktopMainHeader">Защо grimo.bg е най-препочитаният сайт</h2>
+        <div class="footerDesktopRowCol">
+          <a  class = "desktopNavbarLinkAdditionalPages"  [routerLink]="['why-us']" ><h2 class="footerDesktopRowColHeader">Защо всички избират grimo.bg</h2></a>
+          <a  class = "desktopNavbarLinkAdditionalPages"  [routerLink]="['about-us']" ><h2 class="footerDesktopRowColHeader">За нас</h2></a>
+        </div>
+
+        <div class="footerDesktopRowCol">
+          <a  class = "desktopNavbarLinkAdditionalPages"  [routerLink]="['original-product']" ><h2 class="footerDesktopRowColHeader">100% гаранция за оригинални продукти</h2></a>
+            <a  class = "desktopNavbarLinkAdditionalPages"  [routerLink]="['phone-order']" ><h2 class="footerDesktopRowColHeader">Поръчки по телефона</h2></a>
+        </div>
+
+      </div>
+
+      <hr class="hrFooter">
+
+      <div class="footerDesktopRow">
+        <h2 class="footerDesktopMainHeader">Други линкове</h2>
+        <div class="footerDesktopRowCol">
+          <a  class = "desktopNavbarLinkAdditionalPages"  [routerLink]="['why-us']" ><h2 class="footerDesktopRowColHeader">Доставка и начин на плащане</h2></a>
+          <a  class = "desktopNavbarLinkAdditionalPages"  [routerLink]="['reklamaciq']" ><h2 class="footerDesktopRowColHeader">Лесна рекламация</h2></a>
+        </div>
+
+        <div class="footerDesktopRowCol">
+          <a  class = "desktopNavbarLinkAdditionalPages"  [routerLink]="['return-product']" ><h2 class="footerDesktopRowColHeader">Гаранция за връшане на Вашите пари</h2></a>
+          <a  class = "desktopNavbarLinkAdditionalPages"  [routerLink]="['privacy']" ><h2 class="footerDesktopRowColHeader">Общи условия и политика за поверителност на данните</h2></a>
+        </div>
+      </div>
+
+      <hr class="hrFooter">
+      <div id="footerDesktopRow">
+        <h2 id="copyRightText">@2021 Grimo.bg Всики права запазени</h2>
+        <div id="footerDesktopFollowUsIcons">
+          <fa-icon class="faiconsFacebook" [icon]="faFacebook"></fa-icon>
+        <fa-icon class="faiconsFacebook" [icon]="faInstagram"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--FOOTER MOBILE-->
+  <div id="footer">
+    <div id="innerFooter">
+      <h2 class="mainTitle">Абонирайте се за нашия бюлетин</h2>
+      <hr class="hrFooter">
+
+      <div id="bulletin">
+        <h2 id="firstTextBulletin">Регистрирайте се сега за да получавате всикчи оферсти и талони по имейл</h2>
+        <form id="formbulettinRegister" class="example-form-field">
+          <input matInput id="bulettinRegisterField" type="text" placeholder="Въведете вашия email..." >
+        </form>
+        <div id="footerButtons">
+          <div id="innerDivFooterButtonsLeft">
+            <button class="banner1button"  >ЖЕНА</button>
+          </div>
+          <div id="innerDivFooterButtonsRight">
+            <button  class="banner1button">МЪЖ</button>
+          </div>
+        </div>
+
+        <div class="form-group" id="checkboxStyle">
+          <h2 id="textCehckBoxStyle"> <input type="checkbox" >
+            Желая да се регистрирам за бюлетин и съм съгласен предоставената от мен
+            информация да се обработва съобразно
+            политиката за поверитленост на данните.</h2>
+        </div>
+
+      </div>
+
+      <h2 class="mainTitle">Защо grimo.bg е най-предпочитаният сайт</h2>
+      <hr class="hrFooter">
+      <a  class = "mobileNavbarLink"  [routerLink]="['why-us']" ><h2 class="subTitle">Защо всички избират grimo.bg</h2></a>
+      <a  class = "mobileNavbarLink"  [routerLink]="['original-product']" ><h2 class="subTitle">100% гаранция за оригинални продукти</h2></a>
+      <a  class = "mobileNavbarLink"  [routerLink]="['about-us']" ><h2 class="subTitle">За нас</h2></a>
+      <a  class = "mobileNavbarLink"  [routerLink]="['phone-order']" ><h2 class="subTitle">Поръчки по телефона</h2></a>
+
+      <h2 class="mainTitle">Други линкове</h2>
+      <hr class="hrFooter">
+      <a  class = "mobileNavbarLink"  [routerLink]="['return-product']" ><h2 class="subTitle">Гаранция да връщане на Вашите пари</h2></a>
+      <a  class = "mobileNavbarLink"  [routerLink]="['reklamaciq']" ><h2 class="subTitle">Лесна рекламация</h2></a>
+      <a  class = "mobileNavbarLink"  [routerLink]="['return-product']" ><h2 class="subTitle">Доставка и начин на плащане</h2></a>
+      <a  class = "mobileNavbarLink"  [routerLink]="['privacy']" ><h2 class="subTitle">Общи условия и политика за поверителност на данните</h2></a>
+
+      <h2 class="mainTitle">Последвайте ни</h2>
+      <hr class="hrFooter">
+      <div id="followUsIconsDiv">
+        <fa-icon class="faiconsFacebook" [icon]="faFacebook"></fa-icon>
+        <fa-icon class="faiconsFacebook" [icon]="faInstagram"></fa-icon>
+      </div>
+    </div>
+    <div id="copyRight">
+
+      <h2 id="copyRightText">© COPYRIGHT 2021 - Grimo.bg</h2>
+      <a id="advertismentLinkYMD" target="_blank" href="https://ymdsolutions.com"><h2 id="ymdText" >Created by YMD Solutions</h2></a>
+    </div>
+  </div>
+</mat-drawer-content>
+</mat-drawer-container>
+</div>

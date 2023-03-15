@@ -1,0 +1,336 @@
+<div id="container">
+  <div id="infoAccount">
+    <div id="infoAccountInnerDiv">
+      <h2 id="accountName">dimulskiatanas@gmail.com</h2>
+      <button id="buttonInfoAccount" (click)="logout()">Изход</button>
+    </div>
+  </div>
+  <hr id="hrAccount">
+  <div id="loginDetailsDiv">
+    <h2 class="subTitle">Данни за вход</h2>
+
+  <!--Form-->
+    <div id="formnmap">
+      <div class="formDiv">
+        <form [formGroup]="loginForm" #f='ngForm' novalidate>
+          <div class="formFileldsRowContainer">
+            <div class="form-group">
+              <label for="name">E-mail</label>
+              <input type="text"
+              [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+              class="form-control"
+              id="loginFormName"
+              formControlName="loginFormName"
+              [(ngModel)]="itemName"
+              required>
+            </div>
+
+            <div class="form-group">
+              <label for="alterEgo">Парола</label>
+              <input type="text"
+              class="form-control"
+              id="loginFormEmail"
+              formControlName="loginFormEmail"
+              [(ngModel)]="itemEmail">
+            </div>
+          </div>
+          <div class="buttoncenter">
+            <button type="submit" class="banner1button"  (click)=onSubmit() (click)=clearForm() [disabled]="!f.valid" >Промени Парола</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--Invoice info-->
+  <div id="invoiceInfoDiv">
+    <h2 class="subTitle">Данни за фактурата</h2>
+
+  <!--Form-->
+  <div id="formnmap">
+    <div class="formDiv">
+      <form [formGroup]="contactForm" #f='ngForm' novalidate>
+        <div class="formFileldsRowContainer">
+          <div class="form-group">
+            <label for="name">Име</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormName"
+            formControlName="contactFormName"
+            [(ngModel)]="itemName"
+            required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Фамилия</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormName"
+            formControlName="contactFormName"
+            [(ngModel)]="itemName"
+            required>
+          </div>
+        </div>
+
+        <div class="form-group" id="smallerFormGroup">
+          <label for="alterEgo">Град или село</label>
+          <input type="text"
+          class="form-control"
+          id="contactFormEmail"
+          formControlName="contactFormEmail"
+          [(ngModel)]="itemEmail">
+        </div>
+
+        <div class="formFileldsRowContainer">
+          <div class="form-group">
+            <label for="alterEgo">Улица</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormPhone"
+            formControlName="contactFormPhone"
+            [(ngModel)]="itemPhone">
+          </div>
+
+          <div class="form-group">
+            <label for="name">Номер</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+        </div>
+
+        <div class="formFileldsRowContainer">
+          <div class="form-group">
+            <label for="name">Район</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Блок</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+        </div>
+
+        <div class="formFileldsRowContainer">
+          <div class="form-group">
+            <label for="name">Вход</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Етаж</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+        </div>
+
+
+        <div class="form-group" id="smallerFormGroup">
+          <label for="name">Номер на апартамент</label>
+          <input type="text"
+          [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+          class="form-control"
+          id="contactFormCity"
+          formControlName="contactFormCity"
+          [(ngModel)]="itemCity"
+          required>
+        </div>
+
+        <div class="form-group" id="checkboxStyle">
+          <input type="checkbox" (click)="showCompanyDetails()">
+          <h2 id="textCehckBoxStyle">Искам да въведа данни на фирма</h2>
+        </div>
+        <!--Hidden Form Groups-->
+        <div class="hiddenFormGroup" *ngIf="companyCheckBoxValue" >
+          <div class="form-group" id="smallerFormGroup">
+            <label for="name">Фирма</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+
+          <div class="form-group" id="smallerFormGroup">
+            <label for="name">ЕИК/БУЛСТАТ</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+
+          <div class="form-group" id="smallerFormGroup">
+            <label for="name">ДДС номер</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+        </div>
+
+        <div class="form-group" id="checkboxStyle">
+          <input type="checkbox" (click)="showDifferentAddress()">
+          <h2 id="textCehckBoxStyle">Адресът за фактуриране е различен от адреса за доставка</h2>
+        </div>
+        <!--Hidden Form Groups-->
+        <div class="hiddenFormGroup" *ngIf="differentAddresCheckBoxValue" >
+
+          <div class="formFileldsRowContainer">
+            <div class="form-group">
+              <label for="name">Име</label>
+              <input type="text"
+              [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+              class="form-control"
+              id="contactFormName"
+              formControlName="contactFormName"
+              [(ngModel)]="itemName"
+              required>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Фамилия</label>
+              <input type="text"
+              [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+              class="form-control"
+              id="contactFormName"
+              formControlName="contactFormName"
+              [(ngModel)]="itemName"
+              required>
+            </div>
+          </div>
+
+          <div class="form-group" id="smallerFormGroup">
+            <label for="alterEgo">Град или село</label>
+            <input type="text"
+            class="form-control"
+            id="contactFormEmail"
+            formControlName="contactFormEmail"
+            [(ngModel)]="itemEmail">
+          </div>
+
+          <div class="formFileldsRowContainer">
+            <div class="form-group">
+              <label for="alterEgo">Улица</label>
+              <input type="text"
+              class="form-control"
+              id="contactFormPhone"
+              formControlName="contactFormPhone"
+              [(ngModel)]="itemPhone">
+            </div>
+
+            <div class="form-group">
+              <label for="name">Номер</label>
+              <input type="text"
+              [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+              class="form-control"
+              id="contactFormCity"
+              formControlName="contactFormCity"
+              [(ngModel)]="itemCity"
+              required>
+            </div>
+          </div>
+
+          <div class="formFileldsRowContainer">
+            <div class="form-group">
+              <label for="name">Район</label>
+              <input type="text"
+              [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+              class="form-control"
+              id="contactFormCity"
+              formControlName="contactFormCity"
+              [(ngModel)]="itemCity"
+              required>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Блок</label>
+              <input type="text"
+              [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+              class="form-control"
+              id="contactFormCity"
+              formControlName="contactFormCity"
+              [(ngModel)]="itemCity"
+              required>
+            </div>
+          </div>
+
+          <div class="formFileldsRowContainer">
+            <div class="form-group">
+              <label for="name">Вход</label>
+              <input type="text"
+              [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+              class="form-control"
+              id="contactFormCity"
+              formControlName="contactFormCity"
+              [(ngModel)]="itemCity"
+              required>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Етаж</label>
+              <input type="text"
+              [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+              class="form-control"
+              id="contactFormCity"
+              formControlName="contactFormCity"
+              [(ngModel)]="itemCity"
+              required>
+            </div>
+          </div>
+
+          <div class="form-group" id="smallerFormGroup">
+            <label for="name">Номер на апартамент</label>
+            <input type="text"
+            [class.is-invalid]="contactFormName.invalid && contactFormName.touched"
+            class="form-control"
+            id="contactFormCity"
+            formControlName="contactFormCity"
+            [(ngModel)]="itemCity"
+            required>
+          </div>
+        </div>
+
+        <div class="buttoncenter">
+          <button type="submit" class="banner1button"  (click)=onSubmit() (click)=clearForm() [disabled]="!f.valid" >Изпрати</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
